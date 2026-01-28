@@ -1,0 +1,2 @@
+A general-purpose library for Terraria mods to use.
+For more information, check the GitHub repository.

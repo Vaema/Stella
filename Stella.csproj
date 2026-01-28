@@ -1,0 +1,15 @@
+﻿<Project Sdk="Tomat.Terraria.ModLoader.Sdk/1.0.9">
+
+	<!-- Import tModLoader mod properties -->
+	<Import Project="..\tModLoader.targets" />
+
+	<PropertyGroup>
+		<ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Folder Include="Core\Graphics\Particles\FastParticles\" />
+	  <Folder Include="Core\Physics\InverseKinematics\" />
+	</ItemGroup>
+
+</Project>

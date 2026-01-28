@@ -1,0 +1,4 @@
+[h1]Stella[/h1]
+
+A general-purpose library for Terraria mods to use.
+For more information, check the [url=https://github.com/Vaema/Stella] GitHub repository [/url].

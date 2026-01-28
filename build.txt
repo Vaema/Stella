@@ -1,0 +1,10 @@
+displayName = Stella
+author = Astra
+version = 1.0
+homepage = https://github.com/Vaema/Stella
+
+hideCode = false
+hideResources = false
+includeSource = true
+
+buildIgnore = .tml-build\*, .vs\*, *.tmp, Properties\*, Assets\Effects\Compiler\*, *.csproj, *.user, obj\*, bin\*, *.config, .git\*, .github\*, LICENSE, *.md, .editorconfig, .gitignore, .gitattributes
