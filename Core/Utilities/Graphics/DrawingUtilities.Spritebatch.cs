@@ -1,5 +1,4 @@
-﻿using Stella.Core.Graphics;
-using System;
+﻿using System;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Microsoft.Xna.Framework;

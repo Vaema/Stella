@@ -5,74 +5,73 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace Stella.Core.Graphics.Particles.Metaballs
+namespace Stella.Core.Graphics.Particles.Metaballs;
+
+public class MetaballManager : ModSystem
 {
-    public class MetaballManager : ModSystem
+    internal static readonly List<MetaballType> MetaballTypes = [];
+
+    public override void OnModLoad()
     {
-        internal static readonly List<MetaballType> MetaballTypes = new();
+        RenderTargetManager.RenderTargetUpdateLoopEvent += PrepareMetaballTargets;
+    }
 
-        public override void OnModLoad()
-        {
-            RenderTargetManager.RenderTargetUpdateLoopEvent += PrepareMetaballTargets;
-        }
-
-        public override void OnModUnload()
-        {
-            Main.QueueMainThreadAction(() =>
-            {
-                foreach (var type in MetaballTypes)
-                    type?.Dispose();
-
-                MetaballTypes.Clear();
-            });
-        }
-
-        public override void OnWorldUnload()
+    public override void OnModUnload()
+    {
+        Main.QueueMainThreadAction(() =>
         {
             foreach (var type in MetaballTypes)
-                type.ClearInstances();
-        }
+                type?.Dispose();
 
-        private void PrepareMetaballTargets()
+            MetaballTypes.Clear();
+        });
+    }
+
+    public override void OnWorldUnload()
+    {
+        foreach (var type in MetaballTypes)
+            type.ClearInstances();
+    }
+
+    private void PrepareMetaballTargets()
+    {
+        if (Main.gameMenu)
+            return;
+
+        var activeTypes = MetaballTypes.Where(type => type.ShouldRender);
+
+        if (!activeTypes.Any())
+            return;
+
+        // TODO: Can this be optimised in any way? Feels kind of stinky, the differenting layers could potentially be handled entirely in the shader instead of a bunch of RTs?
+        foreach (var type in activeTypes)
         {
-            if (Main.gameMenu)
-                return;
+            if (!Main.gamePaused)
+                type.Update();
 
-            var activeTypes = MetaballTypes.Where(type => type.ShouldRender);
-
-            if (!activeTypes.Any())
-                return;
-
-            // TODO: Can this be optimised in any way? Feels kind of stinky, the differenting layers could potentially be handled entirely in the shader instead of a bunch of RTs?
-            foreach (var type in activeTypes)
+            foreach (var target in type.LayerTargets)
             {
-                if (!Main.gamePaused)
-                    type.Update();
+                target.SwapToRenderTarget();
 
-                foreach (var target in type.LayerTargets)
-                {
-                    target.SwapToRenderTarget();
+                if (!type.PerformCustomSpritebatchBegin(Main.spriteBatch))
+                    Main.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.Default, RasterizerState.CullNone, null, Matrix.Identity);
 
-                    if (!type.PerformCustomSpritebatchBegin(Main.spriteBatch))
-                        Main.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.Default, RasterizerState.CullNone, null, Matrix.Identity);
+                type.DrawInstances();
 
-                    type.DrawInstances();
-
-                    Main.spriteBatch.End();
-                }
-
-                Main.instance.GraphicsDevice.SetRenderTarget(null);
+                Main.spriteBatch.End();
             }
+
+            Main.instance.GraphicsDevice.SetRenderTarget(null);
         }
+    }
 
-        internal static void DrawMetaballTargets()
+    internal static void DrawMetaballTargets()
+    {
+        foreach (var type in MetaballTypes.Where(type => type.ShouldRender))
         {
-            foreach (var type in MetaballTypes.Where(type => type.ShouldRender))
-            {
-                // TODO: Same as above, this does not seem very optimal.
-                if (!type.DrawnManually)
-                    type.RenderLayerWithShader();
-            }
+            // TODO: Same as above, this does not seem very optimal.
+            if (!type.DrawnManually)
+                type.RenderLayerWithShader();
         }
     }
 }

@@ -26,7 +26,7 @@ This system allows you to easily modify the camera with panning to a specific lo
 
 ## Screen Modifier Manager
 This system allows you to do things with the screen target from a ``FilterManager.EndCapture`` detour, while following a priority order from other mods using this system for ordering.<br/>
-To use, call ``ScreenModifierManager.RegisterScreenModifier`` in any ``PostSetupContent`` (or anywhere after Luminance has ran its loading). All registered modifiers are ran from lowest priority to highest, and you can check Luminance's modifier's priorities inside ``ScreenModifierManager``.
+To use, call ``ScreenModifierManager.RegisterScreenModifier`` in any ``PostSetupContent`` (or anywhere after Stella has ran its loading). All registered modifiers are ran from lowest priority to highest, and you can check Stella's modifier's priorities inside ``ScreenModifierManager``.
 
 ```c#
 private void PerformScreenModifications(RenderTarget2D finalTexture, RenderTarget2D screenTarget1, RenderTarget2D screenTarget2, Color clearColor)

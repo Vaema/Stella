@@ -3,13 +3,13 @@
 	<!-- Import tModLoader mod properties -->
 	<Import Project="..\tModLoader.targets" />
 
+  <!-- General -->
 	<PropertyGroup>
 		<ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
 	</PropertyGroup>
 
 	<ItemGroup>
 	  <Folder Include="Core\Graphics\Particles\FastParticles\" />
-	  <Folder Include="Core\Physics\InverseKinematics\" />
 	</ItemGroup>
 
 </Project>

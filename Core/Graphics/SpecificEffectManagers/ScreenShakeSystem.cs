@@ -10,7 +10,7 @@ namespace Stella.Core.Graphics.SpecificEffectManagers;
 public class ScreenShakeSystem : ModSystem
 {
     /// <summary>
-    /// Represents a screenshake instance.
+    /// Represents a screen shake instance.
     /// </summary>
     public class ShakeInfo
     {
@@ -58,10 +58,10 @@ public class ScreenShakeSystem : ModSystem
     /// <summary>
     /// Creates a general screen shake.
     /// </summary>
-    /// <param name="strength">The strength of the screenshake.</param>
-    /// <param name="angularVariance">The size of the angle to randomly offset the screenshake direction by.</param>
-    /// <param name="shakeDirection">The direction of the screenshake. Is <see cref="Vector2.Zero"/> by default.</param>
-    /// <param name="shakeStrengthDissipationIncrement">The amount to decrease the screenshake strength by each frame.</param>
+    /// <param name="strength">The strength of the screen shake.</param>
+    /// <param name="angularVariance">The size of the angle to randomly offset the screen shake direction by.</param>
+    /// <param name="shakeDirection">The direction of the screen shake. Is <see cref="Vector2.Zero"/> by default.</param>
+    /// <param name="shakeStrengthDissipationIncrement">The amount to decrease the screen shake strength by each frame.</param>
     public static ShakeInfo StartShake(float strength, float angularVariance = TwoPi, Vector2? shakeDirection = null, float shakeStrengthDissipationIncrement = 0.2f)
     {
         if (Main.dedServ)
@@ -83,13 +83,13 @@ public class ScreenShakeSystem : ModSystem
     /// <summary>
     /// Creates a screen shake at a specific point.
     /// </summary>
-    /// <param name="shakeCenter">The position of the screenshake.</param>
-    /// <param name="strength">The strength of the screenshake.</param>
-    /// <param name="angularVariance">The size of the angle to randomly offset the screenshake direction by.</param>
-    /// <param name="shakeDirection">The direction of the screenshake. Is <see cref="Vector2.Zero"/> by default.</param>
-    /// <param name="shakeStrengthDissipationIncrement">The amount to decrease the screenshake strength by each frame.</param>
-    /// <param name="intensityTaperEndDistance">The distance where beyond this, the player should not be affected by the screenshake.</param>
-    /// <param name="intensityTaperStartDistance">The starting distance for the screenshake intensity to fall off for the player.</param>
+    /// <param name="shakeCenter">The position of the screen shake.</param>
+    /// <param name="strength">The strength of the screen shake.</param>
+    /// <param name="angularVariance">The size of the angle to randomly offset the screen shake direction by.</param>
+    /// <param name="shakeDirection">The direction of the screen shake. Is <see cref="Vector2.Zero"/> by default.</param>
+    /// <param name="shakeStrengthDissipationIncrement">The amount to decrease the screen shake strength by each frame.</param>
+    /// <param name="intensityTaperEndDistance">The distance where beyond this, the player should not be affected by the screen shake.</param>
+    /// <param name="intensityTaperStartDistance">The starting distance for the screen shake intensity to fall off for the player.</param>
     public static ShakeInfo StartShakeAtPoint(Vector2 shakeCenter, float strength, float angularVariance = TwoPi, Vector2? shakeDirection = null, float shakeStrengthDissipationIncrement = 0.2f, float intensityTaperEndDistance = 2300f, float intensityTaperStartDistance = 1476f)
     {
         if (Main.dedServ)
@@ -104,12 +104,12 @@ public class ScreenShakeSystem : ModSystem
     }
 
     /// <summary>
-    /// Sets the universal screenshake. Only one of these exists at a time, and setting another while one is active will override the existing one.
+    /// Sets the universal screen shake. Only one of these exists at a time, and setting another while one is active will override the existing one.
     /// </summary>
-    /// <param name="strength">The strength of the screenshake.</param>
-    /// <param name="angularVariance">The size of the angle to randomly offset the screenshake direction by.</param>
-    /// <param name="shakeDirection">The direction of the screenshake. Is <see cref="Vector2.Zero"/> by default.</param>
-    /// <param name="shakeStrengthDissipationIncrement">The amount to decrease the screenshake strength by each frame.</param>
+    /// <param name="strength">The strength of the screen shake.</param>
+    /// <param name="angularVariance">The size of the angle to randomly offset the screen shake direction by.</param>
+    /// <param name="shakeDirection">The direction of the screen shake. Is <see cref="Vector2.Zero"/> by default.</param>
+    /// <param name="shakeStrengthDissipationIncrement">The amount to decrease the screen shake strength by each frame.</param>
     public static ShakeInfo SetUniversalRumble(float strength, float angularVariance = TwoPi, Vector2? shakeDirection = null, float shakeStrengthDissipationIncrement = 0.2f)
     {
         if (Main.dedServ)

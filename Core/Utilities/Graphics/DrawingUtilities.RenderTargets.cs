@@ -15,7 +15,7 @@ public static partial class Utilities
     /// <param name="flushColor">The color to reset the render target's contents to. Defaults to <see cref="Color.Transparent"/>.</param>
     public static void SwapToRenderTarget(this RenderTarget2D renderTarget, Color? flushColor = null)
     {
-        // Local variables for convinience.
+        // Local variables for convenience.
         GraphicsDevice graphicsDevice = Main.graphics.GraphicsDevice;
         SpriteBatch spriteBatch = Main.spriteBatch;
 

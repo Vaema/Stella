@@ -49,6 +49,7 @@ public static partial class Utilities
         {
             A = color.A
         };
+
         return rgb;
     }
 
