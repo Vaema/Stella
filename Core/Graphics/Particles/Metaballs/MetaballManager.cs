@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Stella.Core.Graphics.Automators;
 using Terraria;
 using Terraria.ModLoader;
 

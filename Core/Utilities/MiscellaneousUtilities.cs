@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.GameContent.Events;
 using Terraria.ID;
 
-namespace Stella.Common.Utilities;
+namespace Stella.Core.Utilities;
 
 public static partial class Utilities
 {

@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 
-namespace Stella.Common.Utilities;
+namespace Stella.Core.Utilities;
 
 public static partial class Utilities
 {

@@ -6,7 +6,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Stella.Common.Utilities;
+namespace Stella.Core.Utilities;
 
 public static partial class Utilities
 {
@@ -169,4 +169,11 @@ public static partial class Utilities
         }
         return null;
     }
+
+    /// <summary>
+    ///     Checks if a projectile is alive.
+    /// </summary>
+    /// <param name="projectile">The projectile.</param>
+    /// <returns></returns>
+    public static bool Alive(this Projectile projectile) => projectile != null && projectile.active && projectile.timeLeft > 0;
 }

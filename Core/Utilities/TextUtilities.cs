@@ -5,7 +5,7 @@ using Terraria.Localization;
 using Terraria;
 using System.Text;
 
-namespace Stella.Common.Utilities;
+namespace Stella.Core.Utilities;
 
 public static partial class Utilities
 {

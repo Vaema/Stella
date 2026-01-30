@@ -8,8 +8,4 @@
 		<ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
 	</PropertyGroup>
 
-	<ItemGroup>
-	  <Folder Include="Core\Graphics\Particles\FastParticles\" />
-	</ItemGroup>
-
 </Project>

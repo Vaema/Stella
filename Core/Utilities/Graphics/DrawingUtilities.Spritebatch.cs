@@ -2,8 +2,9 @@
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Microsoft.Xna.Framework;
+using Stella.Core.Graphics.Atlases;
 
-namespace Stella.Common.Utilities;
+namespace Stella.Core.Utilities;
 
 public static partial class Utilities
 {

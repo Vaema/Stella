@@ -5,7 +5,7 @@ using System.Reflection;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Core;
 
-namespace Stella.Common.Utilities;
+namespace Stella.Core.Utilities;
 
 public static partial class Utilities
 {

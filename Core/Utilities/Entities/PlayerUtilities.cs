@@ -1,6 +1,7 @@
-﻿using Terraria;
+﻿using Microsoft.Xna.Framework;
+using Terraria;
 
-namespace Stella.Common.Utilities;
+namespace Stella.Core.Utilities;
 
 public static partial class Utilities
 {
@@ -22,4 +23,18 @@ public static partial class Utilities
 
         return p.HeldItem;
     }
+
+    /// <summary>
+    ///     Gets the player's center.
+    /// </summary>
+    /// <param name="player">The player.</param>
+    /// <returns></returns>
+    public static Vector2 GetPlayerCenter(this Player player) => player.MountedCenter.Floor() + new Vector2(0, player.gfxOffY);
+
+    /// <summary>
+    ///     Checks if the player is alive.
+    /// </summary>
+    /// <param name="player">The player.</param>
+    /// <returns></returns>
+    public static bool Alive(this Player player) => player != null && player.active && !player.dead;
 }

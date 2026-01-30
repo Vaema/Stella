@@ -5,7 +5,7 @@ using Terraria;
 using Terraria.GameContent.RGB;
 using Terraria.Utilities;
 
-namespace Stella.Common.Utilities;
+namespace Stella.Core.Utilities;
 
 public static partial class Utilities
 {

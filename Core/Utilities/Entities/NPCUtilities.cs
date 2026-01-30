@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Stella.Common.Utilities;
+namespace Stella.Core.Utilities;
 
 public static partial class Utilities
 {
@@ -83,4 +83,11 @@ public static partial class Utilities
         BossIsActiveThisFrame = false;
         return BossIsActiveThisFrame.Value;
     }
+
+    /// <summary>
+    ///     Checks if an NPC is alive.
+    /// </summary>
+    /// <param name="npc">The NPC.</param>
+    /// <returns></returns>
+    public static bool Alive(this NPC npc) => npc != null && npc.active && npc.timeLeft > 0;
 }
