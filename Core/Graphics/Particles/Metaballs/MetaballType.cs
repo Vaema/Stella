@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Threading;
+using Stella.Core.Graphics.Atlases;
+using Stella.Core.Graphics.Automators;
+using Stella.Core.Graphics.Shaders;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -165,7 +168,7 @@ public abstract class MetaballType : ModType
     public virtual void PrepareShaderForTarget(int layerIndex)
     {
         // Store the in an easy to use local variables.
-        var metaballShader = ShaderManager.GetShader("Luminance.MetaballEdgeShader");
+        var metaballShader = ShaderManager.GetShader("Stella.MetaballEdgeShader");
 
         // Fetch the layer texture. This is the texture that will be overlaid over the greyscale contents on the screen.
         Texture2D layerTexture = LayerTextures[layerIndex]();

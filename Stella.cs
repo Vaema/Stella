@@ -5,6 +5,8 @@ global using static Stella.Assets.AssetDirectories;
 using System;
 using Stella.Core.Graphics.Particles;
 using Terraria.ModLoader;
+using Stella.Core.Graphics.Shaders;
+using Stella.Core.Graphics.Atlases;
 
 namespace Stella;
 

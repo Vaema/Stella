@@ -2,6 +2,8 @@
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Stella.Core.Cutscenes;
+using Stella.Core.Graphics.Shaders;
 using Terraria;
 using Terraria.Graphics.Effects;
 using Terraria.ModLoader;
