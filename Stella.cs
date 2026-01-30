@@ -1,6 +1,7 @@
 ﻿global using static System.MathF;
 global using static Microsoft.Xna.Framework.MathHelper;
 global using static Stella.Core.Utilities.Utilities;
+global using static Stella.Assets.AssetDirectories;
 using System;
 using Stella.Core.Graphics.Particles;
 using Terraria.ModLoader;
