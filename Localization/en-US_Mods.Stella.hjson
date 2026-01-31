@@ -9,7 +9,7 @@ Configs: {
 
 		ScreenshakeModifier: {
 			Label: Screen Shake Modifier
-			Tooltip: Modifies the strength of screenshake effects. Set to zero to disable screen shake effects entirely.
+			Tooltip: Modifies the strength of screen shake effects. Set to zero to disable screen shake effects entirely.
 		}
 	}
 }
