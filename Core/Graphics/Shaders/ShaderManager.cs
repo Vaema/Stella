@@ -160,7 +160,7 @@ public sealed class ShaderManager : ModSystem
         RenderTarget2D target1 = null;
         RenderTarget2D target2 = screenTarget1;
 
-        if (Main.player[Main.myPlayer].gravDir == -1f)
+        if (Main.LocalPlayer.gravDir == -1f)
         {
             target1 = AuxiliaryTarget;
             Main.instance.GraphicsDevice.SetRenderTarget(target1);
@@ -171,7 +171,7 @@ public sealed class ShaderManager : ModSystem
             target2 = AuxiliaryTarget;
         }
 
-        List<ManagedScreenFilter> activeFilters = filters.Values.Where(filter => filter.Opacity > 0).ToList();
+        List<ManagedScreenFilter> activeFilters = [.. filters.Values.Where(filter => filter.Opacity > 0)];
         foreach (var filter in activeFilters)
         {
             target1 = (target2 != MainTarget.Target) ? MainTarget : AuxiliaryTarget;

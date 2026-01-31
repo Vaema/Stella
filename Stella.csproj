@@ -8,4 +8,10 @@
 		<ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
 	</PropertyGroup>
 
+  <ItemGroup>
+    <!-- Helpful to automatically import any libraries placed in lib/
+         (still necessary to explicitly add them to dllReferences). -->
+    <Reference Include="$(MSBuildProjectFileDirectory)lib\**\*.dll"/>
+  </ItemGroup>
+
 </Project>
