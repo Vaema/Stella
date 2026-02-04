@@ -57,7 +57,7 @@ public class FastParticleSystem : IDisposable
     /// <summary>
     /// The optional extra update actions that should be performed on particles.
     /// </summary>
-    public readonly ParticleUpdateAction? ExtraUpdates;
+    public readonly ParticleUpdateAction ExtraUpdates;
 
     /// <summary>
     /// The update preparation actions for this particle system.
@@ -66,7 +66,7 @@ public class FastParticleSystem : IDisposable
 
     public delegate void ParticleUpdateAction(ref FastParticle particle);
 
-    public FastParticleSystem(int maxParticles, Action renderPreparations, ParticleUpdateAction? extraUpdates = null)
+    public FastParticleSystem(int maxParticles, Action renderPreparations, ParticleUpdateAction extraUpdates = null)
     {
         MaxParticles = maxParticles;
         MaxVertices = maxParticles * 4;

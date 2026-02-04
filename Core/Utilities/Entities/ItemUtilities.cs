@@ -1,7 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
 
-namespace Stella.Core.Utilities.Entities;
+namespace Stella.Core.Utilities;
 
 public static partial class Utilities
 {

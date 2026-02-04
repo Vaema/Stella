@@ -16,5 +16,5 @@ public class Config : ModConfig
     [Slider]
     [DefaultValue(100)]
     [Range(0, 100)]
-    public int ScreenshakeModifier { get; set; }
+    public int ScreenShakeModifier { get; set; }
 }

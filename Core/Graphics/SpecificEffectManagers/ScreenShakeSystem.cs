@@ -42,7 +42,7 @@ public class ScreenShakeSystem : ModSystem
         internal void Apply()
         {
             float shakeOffset = ShakeStrength;
-            Main.screenPosition += BaseDirection.RotatedByRandom(AngularVariance) * shakeOffset * (ModContent.GetInstance<Config>().ScreenshakeModifier * 0.01f);
+            Main.screenPosition += BaseDirection.RotatedByRandom(AngularVariance) * shakeOffset * (ModContent.GetInstance<Config>().ScreenShakeModifier * 0.01f);
         }
     }
 

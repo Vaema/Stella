@@ -2,11 +2,13 @@
 global using static Microsoft.Xna.Framework.MathHelper;
 global using static Stella.Core.Utilities.Utilities;
 global using static Stella.Assets.AssetDirectories;
+
 using System;
 using Stella.Core.Graphics.Particles;
 using Terraria.ModLoader;
 using Stella.Core.Graphics.Shaders;
 using Stella.Core.Graphics.Atlases;
+using System.IO;
 
 namespace Stella;
 
@@ -15,6 +17,12 @@ namespace Stella;
 /// </summary>
 public class Stella : Mod
 {
+    internal static Stella Instance;
+
+    public override void Load() => Instance = this;
+
+    public override void Unload() => Instance = null;
+
     public override void PostSetupContent()
     {
         ShaderManager.HasFinishedLoading = false;
