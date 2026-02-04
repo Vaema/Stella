@@ -7,4 +7,6 @@ hideCode = false
 hideResources = false
 includeSource = true
 
-buildIgnore = .tml-build\*, .vs\*, *.tmp, Properties\*, *.csproj, *.user, obj\*, bin\*, *.config, .git\*, .github\*, LICENSE, *.md, .editorconfig, .gitignore, .gitattributes
+weakReferences = Daybreak
+
+buildIgnore = .vs\*, Properties\*, *.csproj, *.user, obj\*, bin\*, *.config, .git\*, .github\*, LICENSE, *.md, .editorconfig, .gitignore, .gitattributes
