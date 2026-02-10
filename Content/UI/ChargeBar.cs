@@ -15,39 +15,39 @@ namespace Stella.Content.UI;
 
 public class ChargeBar : UIState
 {
-    private UIText text;
-    private UIElement area;
-    private UIImage frame;
+    private UIText Text;
+    private UIElement Area;
+    private UIImage Frame;
 
-    private Color gradientA;
-    private Color gradientB;
+    private Color GradientA;
+    private Color GradientB;
 
     public override void OnInitialize()
     {
-        area = new UIElement();
-        area.Left.Set(-area.Width.Pixels - 600, 1f);
-        area.Top.Set(30, 0f);
-        area.Width.Set(104, 0f);
-        area.Height.Set(16, 0f);
+        Area = new UIElement();
+        Area.Left.Set(-Area.Width.Pixels - 600, 1f);
+        Area.Top.Set(30, 0f);
+        Area.Width.Set(104, 0f);
+        Area.Height.Set(16, 0f);
 
-        frame = new UIImage(ModContent.Request<Texture2D>("Terradux/Content/UI/Charge/ChargeFrame"));
-        frame.Left.Set(22, 0f);
-        frame.Top.Set(0, 0f);
-        frame.Width.Set(104, 0f);
-        frame.Height.Set(16, 0f);
+        Frame = new UIImage(ModContent.Request<Texture2D>("Stella/Content/UI/ChargeBarFrame"));
+        Frame.Left.Set(22, 0f);
+        Frame.Top.Set(0, 0f);
+        Frame.Width.Set(104, 0f);
+        Frame.Height.Set(16, 0f);
 
-        text = new UIText("0/0");
-        text.Left.Set(0, 0f);
-        text.Top.Set(40, 0f);
-        text.Width.Set(104, 0f);
-        text.Height.Set(16, 0f);
+        Text = new UIText("0/0");
+        Text.Left.Set(0, 0f);
+        Text.Top.Set(40, 0f);
+        Text.Width.Set(104, 0f);
+        Text.Height.Set(16, 0f);
 
-        gradientA = Color.Lime;
-        gradientB = Color.Red;
+        GradientA = Color.Lime;
+        GradientB = Color.Red;
 
-        area.Append(text);
-        area.Append(frame);
-        Append(area);
+        Area.Append(Text);
+        Area.Append(Frame);
+        Append(Area);
     }
 
     protected override void DrawSelf(SpriteBatch spriteBatch)
@@ -57,7 +57,7 @@ public class ChargeBar : UIState
         float quotient = (float)player.AmountCurrent / player.AmountMax;
         quotient = Utils.Clamp(quotient, 0f, 1f);
 
-        Rectangle hitbox = frame.GetInnerDimensions().ToRectangle();
+        Rectangle hitbox = Frame.GetInnerDimensions().ToRectangle();
         hitbox.X += 48;
         hitbox.Width -= 96;
         hitbox.Y += 4;
@@ -69,7 +69,7 @@ public class ChargeBar : UIState
         for (int i = 0; i < steps; i += 1)
         {
             float percent = (float)i / (right - left);
-            spriteBatch.Draw(TextureAssets.MagicPixel.Value, new Rectangle(left + i, hitbox.Y, 1, hitbox.Height), Color.Lerp(gradientA, gradientB, percent));
+            spriteBatch.Draw(TextureAssets.MagicPixel.Value, new Rectangle(left + i, hitbox.Y, 1, hitbox.Height), Color.Lerp(GradientA, GradientB, percent));
         }
     }
 
@@ -79,6 +79,6 @@ public class ChargeBar : UIState
             return;
 
         var player = Main.LocalPlayer.GetModPlayer<WeaponChargePlayer>();
-        text.SetText(WeaponChargeSystem.ChargeText.Format(player.AmountCurrent, player.AmountMax));
+        Text.SetText(WeaponChargeSystem.ChargeText.Format(player.AmountCurrent, player.AmountMax));
     }
 }

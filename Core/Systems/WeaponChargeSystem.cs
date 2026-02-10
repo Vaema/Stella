@@ -17,7 +17,7 @@ public class WeaponChargeSystem : ModSystem
 {
     private UserInterface ChargeInterface;
     
-    internal ChargeBar ChargeBar;
+    internal ChargeBar ChargeBar = new();
 
     public static LocalizedText ChargeText { get; private set; }
 

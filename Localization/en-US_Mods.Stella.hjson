@@ -28,6 +28,4 @@ Configs: {
 	}
 }
 
-UI: {
-    Charge: Charge
-}
+UI.Charge: Charge
