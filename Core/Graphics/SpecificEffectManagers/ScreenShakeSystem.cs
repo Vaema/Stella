@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
+using Stella.Core.Configuration;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -42,7 +43,7 @@ public class ScreenShakeSystem : ModSystem
         internal void Apply()
         {
             float shakeOffset = ShakeStrength;
-            Main.screenPosition += BaseDirection.RotatedByRandom(AngularVariance) * shakeOffset * (ModContent.GetInstance<Config>().ScreenShakeModifier * 0.01f);
+            Main.screenPosition += BaseDirection.RotatedByRandom(AngularVariance) * shakeOffset * (ModContent.GetInstance<StellaClientConfig>().ScreenShakeModifier * 0.01f);
         }
     }
 

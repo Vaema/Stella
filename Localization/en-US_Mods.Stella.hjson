@@ -1,6 +1,6 @@
 Configs: {
-	Config: {
-		DisplayName: Config
+	StellaClientConfig: {
+		DisplayName: Client Config
 
 		MaxParticles: {
 			Label: Max Particles
@@ -11,5 +11,23 @@ Configs: {
 			Label: Screen Shake Modifier
 			Tooltip: Modifies the strength of screen shake effects. Set to zero to disable screen shake effects entirely.
 		}
+
+		ScreenShakeModifier: {
+			Label: Screen Shake Modifier
+			Tooltip: ""
+		}
 	}
+
+	StellaServerConfig: {
+		DisplayName: Server Config
+
+		BehaviorOverrides: {
+			Label: Behavior Overrides
+			Tooltip: Overrides for entity behaviors. Disable if you want vanilla entity behaviors.
+		}
+	}
+}
+
+UI: {
+    Charge: Charge
 }

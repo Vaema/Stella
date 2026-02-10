@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using Terraria.ModLoader.Config;
 
-namespace Stella.Core;
+namespace Stella.Core.Configuration;
 
-public class Config : ModConfig
+public class StellaClientConfig : ModConfig
 {
     public override ConfigScope Mode => ConfigScope.ClientSide;
 

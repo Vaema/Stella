@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Stella.Core.Configuration;
 using Stella.Core.Graphics.Atlases;
 using Terraria;
 using Terraria.ID;
@@ -115,7 +116,7 @@ public abstract class Particle
         // Initialize the life timer.
         Time = 0;
 
-        if (ParticleManager.ActiveParticles.Count > ModContent.GetInstance<Config>().MaxParticles)
+        if (ParticleManager.ActiveParticles.Count > ModContent.GetInstance<StellaClientConfig>().MaxParticles)
             ParticleManager.ActiveParticles.First().Kill();
 
         if (ParticleManager.ManualRenderers.ContainsKey(GetType()))

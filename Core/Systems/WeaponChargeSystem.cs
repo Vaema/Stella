@@ -1,25 +1,51 @@
-﻿//using Stella.Core.Globals.Players;
-//using Terraria;
-//using Terraria.ID;
-//using Terraria.ModLoader;
+﻿using System;
+using System.Collections.Generic;
 
-//namespace Stella.Core.Systems;
+using Microsoft.Xna.Framework;
 
-//public class WeaponChargeSystem : ModSystem
-//{
-//    public override void PostUpdatePlayers()
-//    {
-//        if (Main.netMode == NetmodeID.MultiplayerClient)
-//            return;
+using Stella.Content.UI;
 
-//        foreach (Player player in Main.player)
-//        {
-//            if (player == null || !player.active)
-//                continue;
+using Terraria;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria.UI;
 
-//            var chargePlayer = player.GetModPlayer<WeaponChargePlayer>();
-//            foreach (var ability in chargePlayer.Abilities.Values)
-//                ability.Update();
-//        }
-//    }
-//}
+namespace Stella.Core.Systems;
+
+[Autoload(Side = ModSide.Client)]
+public class WeaponChargeSystem : ModSystem
+{
+    private UserInterface ChargeInterface;
+    
+    internal ChargeBar ChargeBar;
+
+    public static LocalizedText ChargeText { get; private set; }
+
+    public override void Load()
+    {
+        ChargeBar = new();
+        ChargeInterface = new();
+        ChargeInterface.SetState(ChargeBar);
+        ChargeText ??= Mod.GetLocalization($"UI.Charge");
+    }
+
+    public override void UpdateUI(GameTime gameTime) =>
+        ChargeInterface?.Update(gameTime);
+
+    public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
+    {
+        int index = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Resource Bar", StringComparison.Ordinal));
+        if (index != -1)
+        {
+            layers.Insert(index, new LegacyGameInterfaceLayer(
+                "Stella: Charge Bar",
+                delegate {
+
+                    ChargeInterface.Draw(Main.spriteBatch, new GameTime());
+                    return true;
+                },
+                InterfaceScaleType.UI)
+            );
+        }
+    }
+}
