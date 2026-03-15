@@ -4,11 +4,10 @@ global using static Stella.Core.Utilities.Utilities;
 global using static Stella.Assets.AssetDirectories;
 
 using System;
-using Stella.Core.Graphics.Particles;
 using Terraria.ModLoader;
+using Stella.Core.Graphics.Particles;
 using Stella.Core.Graphics.Shaders;
 using Stella.Core.Graphics.Atlases;
-using System.IO;
 
 namespace Stella;
 

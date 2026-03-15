@@ -7,14 +7,9 @@ Configs: {
 			Tooltip: Changes the maximum number of particles that can exist at once.
 		}
 
-		ScreenshakeModifier: {
-			Label: Screen Shake Modifier
-			Tooltip: Modifies the strength of screen shake effects. Set to zero to disable screen shake effects entirely.
-		}
-
 		ScreenShakeModifier: {
 			Label: Screen Shake Modifier
-			Tooltip: ""
+			Tooltip: Modifies the strength of screen shake effects. Set to zero to disable screen shake effects entirely.
 		}
 	}
 

@@ -1,9 +1,8 @@
-﻿# To-Do List
+﻿# TODO
 
 Unfinished implementations:
 - Held item and projectile support (configurable).
-- Behavior override system for entities.
-- Alternative biome and world selection difficulty system.
+- Alternative biome, ore, and world selection difficulty system.
 
 Other ideas to consider:
 - Potential dimension system without the need for Subworld Library?
