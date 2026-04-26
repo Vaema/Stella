@@ -59,7 +59,7 @@ public abstract class BasePrimitiveLaser : ModProjectile
     public override void AI()
     {
         // Make the laser extend outward.
-        LaserLengthFactor = MathHelper.Lerp(LaserLengthFactor, 1f, LaserExtendSpeedInterpolant);
+        LaserLengthFactor = Lerp(LaserLengthFactor, 1f, LaserExtendSpeedInterpolant);
 
         // Decide the rotation of the laser.
         Projectile.rotation = Projectile.velocity.ToRotation();
