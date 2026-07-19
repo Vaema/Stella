@@ -1,5 +1,3 @@
-// Documentation for this file exists as the following location: https://github.com/DominicKarma/Luminance/tree/main/Core/Graphics/Primitives
-// If you copypaste this .fx file for use as a base for a custom shader, don't forget to delete the residual comments in here.
 sampler overlayTexture : register(s1);
 float globalTime;
 matrix uWorldViewProjection;

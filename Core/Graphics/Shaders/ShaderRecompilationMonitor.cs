@@ -12,7 +12,7 @@ using Terraria.ModLoader;
 namespace Stella.Core.Graphics.Shaders;
 
 /// <summary>
-/// The shader recompilation manager, which is responsible for ensuring that changes to .fx files are reflected in-game automatically.
+/// The shader recompilation manager, which is responsible for ensuring that changes to FX files are reflected in-game automatically.
 /// </summary>
 public sealed class ShaderRecompilationMonitor : ModSystem
 {
@@ -40,15 +40,15 @@ public sealed class ShaderRecompilationMonitor : ModSystem
     public static string CompilerDirectory => Path.Combine(Main.SavePath, "FXC");
 
     /// <summary>
-    /// Represents a watcher that looks over a given directory with .fx files.
+    /// Represents a watcher that looks over a given directory with FX files.
     /// </summary>
     /// <param name="EffectsPath">The path that this watcher oversees.</param>
     /// <param name="ModName">The name of the mod responsible for this shader watcher.</param>
-    /// <param name="FileWatcher">The file watcher that fires signals when an .fx file changes.</param>
+    /// <param name="FileWatcher">The file watcher that fires signals when an FX file changes.</param>
     public record ShaderWatcher(string EffectsPath, string ModName, FileSystemWatcher FileWatcher);
 
     /// <summary>
-    /// Represents a .fx file that is being compiled.
+    /// Represents an FX file that is being compiled.
     /// </summary>
     /// <param name="FilePath">The path to the associated file.</param>
     /// <param name="CompileAsFilter">Whether the file represents a screen filter or not.</param>
@@ -117,7 +117,7 @@ public sealed class ShaderRecompilationMonitor : ModSystem
     /// <remarks>
     /// In order for this method to do anything, the following conditions must be met:
     /// <list type="bullet">
-    ///     <item>The mod being searched must have an Assets/AutoloadedEffects directory, as an indicator that the mod is using the Luminance library.</item>
+    ///     <item>The mod being searched must have an Assets/AutoloadedEffects directory, as an indicator that the mod is using the Stella library.</item>
     ///     <item>The mod being searched must have an Assets/AutoloadedEffects/Compiler directory.</item>
     ///     <item>The user executing this method must have a relevant mod source folder that corresponds with the mod.</item>
     /// </list>
@@ -158,7 +158,7 @@ public sealed class ShaderRecompilationMonitor : ModSystem
     public static void RegisterShaderPathOverride(Mod mod, string relativePath) => WatchPathOverrides[mod.Name] = relativePath.Replace("/", "\\");
 
     /// <summary>
-    /// Clears all .fx, .xnb, and .fxc files in the compiler directory.
+    /// Clears all FX, XNB, and FXC files in the compiler directory.
     /// </summary>
     private static void ClearCompilationDirectory()
     {
@@ -224,9 +224,9 @@ public sealed class ShaderRecompilationMonitor : ModSystem
     }
 
     /// <summary>
-    /// Starts the fxc compiler and runs it for a given .fx file.
+    /// Starts the FXC compiler and runs it for a given FX file.
     /// </summary>
-    /// <param name="fxPath">The path to the .fx file.</param>
+    /// <param name="fxPath">The path to the FX file.</param>
     private static void StartCompilerProcess(string fxPath)
     {
         fxPath = Path.GetFileName(fxPath);
@@ -245,6 +245,7 @@ public sealed class ShaderRecompilationMonitor : ModSystem
                 Arguments = compilationCommand
             }
         };
+
         fxcCompiler.Start();
         if (!fxcCompiler.WaitForExit(2500))
         {
@@ -296,7 +297,7 @@ public sealed class ShaderRecompilationMonitor : ModSystem
 
             File.Copy(compiledFxcPath, originalFxcPath);
 
-            // If the old .xnb file format existed at compilation time, delete it, so that there aren't ambiguities between it and the new .fxc file.
+            // If the old XNB file format existed at compilation time, delete it, so that there aren't ambiguities between it and the new FXC file.
             string oldXnbPath = shaderPath.Replace(".fx", ".xnb");
             if (File.Exists(oldXnbPath))
                 File.Delete(oldXnbPath);
@@ -389,7 +390,7 @@ public sealed class ShaderRecompilationMonitor : ModSystem
         if (CompilingFiles.Any(f => f.FilePath == e.FullPath))
             return;
 
-        if (e.FullPath.Contains("Luminance"))
+        if (e.FullPath.Contains("Stella"))
             return;
 
         CompilingFiles.Enqueue(new(e.FullPath, e.FullPath.Contains("\\Filters")));

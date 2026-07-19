@@ -17,7 +17,6 @@ public static partial class Utilities
             while (WorldGen.SolidTile(p.X, p.Y - 1) && p.Y >= 1)
                 p.Y--;
         }
-
         // The tile is not solid. Check down to verify that this tile is not above ground in the middle of the air.
         else
         {

@@ -10,7 +10,7 @@ namespace Stella.Core.Utilities;
 public static partial class Utilities
 {
     /// <summary>
-    ///     Binding flags that account for all access/local membership status.
+    ///     Binding flags that account for all access and local membership statuses.
     /// </summary>
     public static readonly BindingFlags UniversalBindingFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public;
     

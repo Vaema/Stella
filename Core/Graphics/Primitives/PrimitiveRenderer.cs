@@ -143,7 +143,7 @@ public class PrimitiveRenderer : ILoadable
         else
             CalculatePrimitiveMatrices(width, height, out view, out projection);
 
-        var shaderToUse = MainSettings.Shader ?? ShaderManager.GetShader("Luminance.StandardPrimitiveShader");
+        var shaderToUse = MainSettings.Shader ?? ShaderManager.GetShader("Stella.StandardPrimitiveShader");
         shaderToUse.TrySetParameter("uWorldViewProjection", view * projection);
         shaderToUse.Apply();
 
@@ -319,7 +319,7 @@ public class PrimitiveRenderer : ILoadable
     /// <param name="scale">The scale to apply.</param>
     /// <param name="rotation">The rotation to apply.</param>
     /// <param name="color">The color to draw with. Defaults to the lighting color at <paramref name="center"/>.</param>
-    /// <param name="shader">The shader to use. Defaults to "Luminance.QuadRenderer".</param>
+    /// <param name="shader">The shader to use. Defaults to "Stella.QuadRenderer".</param>
     /// <param name="rotationQuarternion">The rotation quarternion to use. Defaults to null.</param>
     public static void RenderQuad(Texture2D texture, Vector2 center, float scale, float rotation, Color? color = null, ManagedShader shader = null, Quaternion? rotationQuarternion = null)
         => RenderQuad(texture, center, new Vector2(scale), rotation, color, shader, rotationQuarternion);
@@ -332,7 +332,7 @@ public class PrimitiveRenderer : ILoadable
     /// <param name="scale">The scale to apply.</param>
     /// <param name="rotation">The rotation to apply.</param>
     /// <param name="color">The color to draw with. Defaults to the lighting color at <paramref name="center"/>.</param>
-    /// <param name="shader">The shader to use. Defaults to "Luminance.QuadRenderer".</param>
+    /// <param name="shader">The shader to use. Defaults to "Stella.QuadRenderer".</param>
     /// <param name="rotationQuarternion">The rotation quarternion to use. Defaults to null.</param>
     public static void RenderQuad(Texture2D texture, Vector2 center, Vector2 scale, float rotation, Color? color = null, ManagedShader shader = null, Quaternion? rotationQuarternion = null)
     {
@@ -359,7 +359,7 @@ public class PrimitiveRenderer : ILoadable
         Main.instance.GraphicsDevice.RasterizerState.ScissorTestEnable = true;
         Main.instance.GraphicsDevice.ScissorRectangle = new Rectangle(0, 0, Main.screenWidth, Main.screenHeight);
 
-        shader ??= ShaderManager.GetShader("Luminance.QuadRenderer");
+        shader ??= ShaderManager.GetShader("Stella.QuadRenderer");
         shader.TrySetParameter("uWorldViewProjection", QuadVertexMatrix);
         shader.SetTexture(texture, 1, SamplerState.PointClamp);
         shader.Apply();
@@ -429,7 +429,7 @@ public class PrimitiveRenderer : ILoadable
         else
             CalculatePrimitiveMatrices(width, height, out view, out projection);
 
-        var shaderToUse = MainSettings.Shader ?? ShaderManager.GetShader("Luminance.StandardPrimitiveShader");
+        var shaderToUse = MainSettings.Shader ?? ShaderManager.GetShader("Stella.StandardPrimitiveShader");
         shaderToUse.TrySetParameter("uWorldViewProjection", view * projection);
         shaderToUse.Apply();
 
@@ -482,7 +482,7 @@ public class PrimitiveRenderer : ILoadable
         else
             CalculatePrimitiveMatrices(width, height, out view, out projection);
 
-        var shaderToUse = MainSettings.Shader ?? ShaderManager.GetShader("Luminance.StandardPrimitiveShader");
+        var shaderToUse = MainSettings.Shader ?? ShaderManager.GetShader("Stella.StandardPrimitiveShader");
         shaderToUse.TrySetParameter("uWorldViewProjection", view * projection);
         shaderToUse.Apply();
 

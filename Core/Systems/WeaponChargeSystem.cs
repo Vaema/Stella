@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Microsoft.Xna.Framework;
-
 using Stella.Content.UI;
-
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
