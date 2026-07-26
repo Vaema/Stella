@@ -42,7 +42,8 @@ public static partial class Utilities
     /// </summary>
     /// <param name="v1">The first vector.</param>
     /// <param name="v2">The second vector.</param>
-    public static float AngleBetween(this Vector2 v1, Vector2 v2) => Acos(Vector2.Dot(v1.SafeNormalize(Vector2.Zero), v2.SafeNormalize(Vector2.Zero)));
+    public static float AngleBetween(this Vector2 v1, Vector2 v2) =>
+        Acos(Vector2.Dot(v1.SafeNormalize(Vector2.Zero), v2.SafeNormalize(Vector2.Zero)));
 
     /// <summary>
     ///     Determines the inverse of a given quaternion.
@@ -63,8 +64,6 @@ public static partial class Utilities
     /// </summary>
     /// <param name="vector">The vector to rotate.</param>
     /// <param name="rotation">The quaternion to rotate by.</param>
-    public static Vector3 RotatedBy(this Vector3 vector, Quaternion rotation)
-    {
-        return Vector3.Transform(Vector3.Transform(vector, rotation), rotation.Inverse());
-    }
+    public static Vector3 RotatedBy(this Vector3 vector, Quaternion rotation) =>
+        Vector3.Transform(Vector3.Transform(vector, rotation), rotation.Inverse());
 }

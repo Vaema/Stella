@@ -10,11 +10,9 @@ public static partial class Utilities
     /// </summary>
     /// <param name="entity">The entity to perform the calculations relative to.</param>
     /// <param name="destination">The position to get the direction towards.</param>
-    public static Vector2 SafeDirectionTo(this Entity entity, Vector2 destination)
-    {
-        return (destination - entity.Center).SafeNormalize(Vector2.Zero);
-    }
-    
+    public static Vector2 SafeDirectionTo(this Entity entity, Vector2 destination) =>
+        (destination - entity.Center).SafeNormalize(Vector2.Zero);
+
     /// <summary>
     ///     Calculates the X direction to a given position from an entity.
     /// </summary>

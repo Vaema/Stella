@@ -28,13 +28,13 @@ public static partial class Utilities
     ///     Gets the player's center.
     /// </summary>
     /// <param name="player">The player.</param>
-    /// <returns></returns>
-    public static Vector2 GetPlayerCenter(this Player player) => player.MountedCenter.Floor() + new Vector2(0, player.gfxOffY);
+    public static Vector2 GetPlayerCenter(this Player player) =>
+        player.MountedCenter.Floor() + new Vector2(0, player.gfxOffY);
 
     /// <summary>
     ///     Checks if the player is alive.
     /// </summary>
     /// <param name="player">The player.</param>
-    /// <returns></returns>
-    public static bool Alive(this Player player) => player != null && player.active && !player.dead;
+    public static bool Alive(this Player player) =>
+        player != null && player.active && !player.dead;
 }

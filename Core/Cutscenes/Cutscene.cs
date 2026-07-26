@@ -59,7 +59,6 @@ public abstract class Cutscene : ModType
     /// </summary>
     public virtual void OnBegin()
     {
-
     }
 
     /// <summary>
@@ -67,7 +66,6 @@ public abstract class Cutscene : ModType
     /// </summary>
     public virtual void OnEnd()
     {
-
     }
 
     /// <summary>
@@ -75,7 +73,6 @@ public abstract class Cutscene : ModType
     /// </summary>
     public virtual void Update()
     {
-
     }
 
     /// <summary>
@@ -83,7 +80,6 @@ public abstract class Cutscene : ModType
     /// </summary>
     public virtual void ModifyScreenPosition()
     {
-
     }
 
     /// <summary>
@@ -91,7 +87,6 @@ public abstract class Cutscene : ModType
     /// </summary>
     public virtual void ModifyTransformMatrix(ref SpriteViewMatrix transform)
     {
-
     }
 
     /// <summary>
@@ -99,7 +94,6 @@ public abstract class Cutscene : ModType
     /// </summary>
     public virtual void DrawToWorld(SpriteBatch spriteBatch)
     {
-
     }
 
     /// <summary>
@@ -107,7 +101,6 @@ public abstract class Cutscene : ModType
     /// </summary>
     public virtual void DrawWorld(SpriteBatch spriteBatch, RenderTarget2D screen)
     {
-
     }
 
     /// <summary>
@@ -115,6 +108,5 @@ public abstract class Cutscene : ModType
     /// </summary>
     public virtual void PostDraw(SpriteBatch spriteBatch)
     {
-
     }
 }

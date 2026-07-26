@@ -16,7 +16,7 @@ public static partial class Utilities
 
     /// <summary>
     ///     Returns the provided number with the correct ordinal suffix.<br/>
-    ///     For example, 3 would return 3rd.
+    ///     For example, 3 would return third.
     /// </summary>
     public static string AddOrdinalSuffix(int positiveNumber)
     {

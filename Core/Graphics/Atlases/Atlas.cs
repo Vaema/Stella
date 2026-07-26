@@ -12,7 +12,7 @@ namespace Stella.Core.Graphics.Atlases;
 
 /// <summary>
 /// Represents a texture atlas, which is a large texture sheet with smaller, single textures crammed into it as tightly as possible.<br/>
-/// Single textures are loaded by a data file that contains json data for each texture. Access these textures via <see cref="AtlasManager.GetTexture(string)"/>.
+/// Single textures are loaded by a data file that contains JSON data for each texture. Access these textures via <see cref="AtlasManager.GetTexture(string)"/>.
 /// You can create atlases using <see href="http://free-tex-packer.com">this software</see>
 /// </summary>
 public sealed class Atlas : IDisposable

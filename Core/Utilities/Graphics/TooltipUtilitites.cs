@@ -18,7 +18,7 @@ public static partial class Utilities
         }
     }
 
-    // This function produces simple predicates to match a specific line of a tooltip, by number/index.
+    // This function produces simple predicates to match a specific line of a tooltip, by number and index.
     public static Func<Item, TooltipLine, bool> LineNum(int n) => (Item i, TooltipLine l) => l.Mod == "Terraria" && l.Name == $"Tooltip{n}";
 
     // This function is shorthand to invoke ApplyTooltipEdits using the above methods.

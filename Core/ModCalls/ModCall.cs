@@ -18,7 +18,7 @@ public abstract class ModCall : ILoadable
     }
 
     /// <summary>
-    /// Processes the modcall, checking that all the parameters match and throws if not.
+    /// Processes the mod call, checking that all the parameters match and throws if not.
     /// </summary>
     /// <param name="argsWithoutCommand"></param>
     /// <returns></returns>
