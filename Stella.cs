@@ -1,13 +1,12 @@
 ﻿global using static System.MathF;
 global using static Microsoft.Xna.Framework.MathHelper;
-global using static Stella.Core.Utilities.Utilities;
 global using static Stella.Assets.AssetDirectories;
-
+global using static Stella.Core.Utilities.Utilities;
 using System;
-using Terraria.ModLoader;
+using Stella.Core.Graphics.Atlases;
 using Stella.Core.Graphics.Particles;
 using Stella.Core.Graphics.Shaders;
-using Stella.Core.Graphics.Atlases;
+using Terraria.ModLoader;
 
 namespace Stella;
 

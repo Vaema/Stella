@@ -31,7 +31,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    /// Retrieves all types which derive from a specific type in a given assembly.
+    ///     Retrieves all types which derive from a specific type in a given assembly.
     /// </summary>
     /// <param name="baseType">The base type.</param>
     /// <param name="assemblyToSearch">The assembly to search.</param>

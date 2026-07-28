@@ -5,9 +5,9 @@ namespace Stella.Core.Utilities;
 public static partial class Utilities
 {
     /// <summary>
-    /// Enables toggled tile states on the X frame based on whether a wire signal is flowing through the tile.
+    ///     Enables toggled tile states on the X frame based on whether a wire signal is flowing through the tile.
     /// <br></br>
-    /// This works for multi-framed tiles, checking the top-left-most tile.
+    ///     This works for multi-framed tiles, checking the top-left-most tile.
     /// </summary>
     /// <param name="type">The tile's ID.</param>
     /// <param name="x">The X position of the tile.</param>

@@ -37,7 +37,7 @@ Stella provides an interface to draw primitives in for NPCs and projectiles with
 
 ## Creating a primitive shader
 Primitives are constrained by a couple of differences compared to "traditional" shaders that are commonly applied to ordinary textures.
-In the ``Assets/AutoloadedEffects/Shaders/Examples`` directory of this repository you will find an example for primitive shaders. This documentation will go through its requirements and purposes.
+In the ``Assets/Effects/Shaders/Examples`` directory of this repository you will find an example for primitive shaders. This documentation will go through its requirements and purposes.
 
 ### Parameters
 Contained within the example shader are the following three parameters:
@@ -57,8 +57,6 @@ The ``uWorldViewProjection`` parameter, on the other hand, is required for primi
 ### Vertex data structures and the vertex shader
 When working with primitives, you must manually ensure that your position coordinates are properly configured to be relative to screen UVs through linear transformations. Luckily, Stella's internals automatically handle the math of this step when applying primitive shaders.
 However, the shader must independently handle the processing of this matrix in the vertex shader. This is all done in the vertex shader.
-
-
 
 One caveat to keep in mind is that Stella uses a trick involving the Z position in the texture input coordinates to automatically address primitive distortion artifacts when the width function makes sharp changes. The ideas behind this are a bit complicated, but for the purposes of simply using this system all you have to remember is that you `` TextureCoordinates`` parameter should be of type ``float3`` for the input structure and ``float2`` for the output structure, and that you must include the ``output.TextureCoordinates.y = ...`` line in your vertex shaders. Misconfiguring this will result in rendering bugs.
 

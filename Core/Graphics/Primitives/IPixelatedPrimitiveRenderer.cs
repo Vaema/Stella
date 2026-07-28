@@ -3,7 +3,7 @@
 namespace Stella.Core.Graphics.Primitives;
 
 /// <summary>
-/// Use to successfully render primitives with pixelation with an NPC or Projectile.
+/// Use to successfully render primitives with pixelation with an NPC or projectile.
 /// </summary>
 public interface IPixelatedPrimitiveRenderer
 {
