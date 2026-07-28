@@ -101,7 +101,7 @@ public sealed class ShaderRecompilationMonitor : ModSystem
         Directory.CreateDirectory(CompilerDirectory);
 
         var fileNames = Mod.GetFileNames();
-        var compilerFileNames = fileNames.Where(f => f.Contains("Assets/AutoloadedEffects/Compiler"));
+        var compilerFileNames = fileNames.Where(f => f.Contains("Assets/Effects/Compiler"));
         foreach (string compilerFileName in compilerFileNames)
         {
             byte[] fileData = Mod.GetFileBytes(compilerFileName);
