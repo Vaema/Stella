@@ -7,3 +7,6 @@ Why? Luminance is planned to be deprecated, and it was pretty laggy to begin wit
 ## Credits
 - Lucille Karma and the Luminance contributors, for creating Luminance.
 - Tomat, for originally informing me that Luminance is being deprecated.
+
+## Important Notice
+Some of the features that are in Luminance were NOT migrated into Stella. It is because of them being redundant and unnecessary, especially with tModLoader 1.4.5 around the corner.
