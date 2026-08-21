@@ -1,5 +1,5 @@
 displayName = Stella
-author = Astra
+author = Astra Gravastar
 version = 1.0
 homepage = https://github.com/Vaema/Stella
 
