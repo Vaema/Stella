@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 
@@ -95,7 +94,7 @@ public static class VerletSimulations
     /// <returns>The segments post simulation.</returns>
     public static List<VerletSegment> RopeVerletSimulation(List<VerletSegment> segments, Vector2 topPosition, float idealRopeLength, VerletSettings settings, Vector2? endPosition = null)
     {
-        if (segments is null || !segments.Any())
+        if (segments is null || segments.Count == 0)
             return segments;
 
         segments[0].Position = topPosition;

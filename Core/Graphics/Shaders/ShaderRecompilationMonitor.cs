@@ -117,8 +117,8 @@ public sealed class ShaderRecompilationMonitor : ModSystem
     /// <remarks>
     /// In order for this method to do anything, the following conditions must be met:
     /// <list type="bullet">
-    ///     <item>The mod being searched must have an Assets/AutoloadedEffects directory, as an indicator that the mod is using the Stella library.</item>
-    ///     <item>The mod being searched must have an Assets/AutoloadedEffects/Compiler directory.</item>
+    ///     <item>The mod being searched must have an Assets/Effects directory, as an indicator that the mod is using the Stella library.</item>
+    ///     <item>The mod being searched must have an Assets/Effects/Compiler directory.</item>
     ///     <item>The user executing this method must have a relevant mod source folder that corresponds with the mod.</item>
     /// </list>
     /// </remarks>
@@ -136,7 +136,7 @@ public sealed class ShaderRecompilationMonitor : ModSystem
         if (!Directory.Exists(modSourcesPath))
             return;
 
-        // Verify that the Assets/AutoloadedEffects directory exists.
+        // Verify that the Assets/Effects directory exists.
         string effectsSubdirectory = "Assets";
         if (WatchPathOverrides.TryGetValue(mod.Name, out string effectsSubdirectoryOverride))
             effectsSubdirectory = effectsSubdirectoryOverride;

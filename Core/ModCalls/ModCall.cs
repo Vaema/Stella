@@ -20,8 +20,6 @@ public abstract class ModCall : ILoadable
     /// <summary>
     /// Processes the mod call, checking that all the parameters match and throws if not.
     /// </summary>
-    /// <param name="argsWithoutCommand"></param>
-    /// <returns></returns>
     /// <exception cref="ArgumentException"></exception>
     internal object ProcessInternal(params object[] argsWithoutCommand)
     {
@@ -51,8 +49,6 @@ public abstract class ModCall : ILoadable
     /// <summary>
     /// Process the mod call here. Return <see cref="ModCallManager.DefaultObject"/> instead of null if no other return value is suitable.
     /// </summary>
-    /// <param name="argsWithoutCommand"></param>
-    /// <returns></returns>
     protected abstract object SafeProcess(params object[] argsWithoutCommand);
 
     ///<summary>

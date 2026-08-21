@@ -1,6 +1,6 @@
 Configs: {
 	StellaClientConfig: {
-		DisplayName: Client Config
+		DisplayName: Client Configuration
 
 		MaxParticles: {
 			Label: Max Particles
@@ -14,13 +14,11 @@ Configs: {
 	}
 
 	StellaServerConfig: {
-		DisplayName: Server Config
+		DisplayName: Server Configuration
 
 		BehaviorOverrides: {
 			Label: Behavior Overrides
-			Tooltip: Overrides for entity behaviors. Disable if you want vanilla entity behaviors.
+			Tooltip: Overrides entity behaviors from other mods that depend on Stella. Disable if you want vanilla entity behaviors.
 		}
 	}
 }
-
-UI.Charge: Charge

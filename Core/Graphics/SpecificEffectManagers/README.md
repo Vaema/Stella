@@ -1,5 +1,5 @@
 # Specific Effect Managers
-This namespace contains several useful effects that you can use, such as camera control or screenshake. Each feature is documented below.
+This namespace contains several useful effects that you can use, such as camera control or screen shake. Each feature is documented below.
 > [!Note]
 > You should avoid using these systems if the game is running as a server as they will have no effect.
 

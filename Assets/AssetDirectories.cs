@@ -12,29 +12,29 @@ public class AssetDirectories : ModSystem
 
     public const string TexturesPath = "Stella/Assets/Textures";
 
-    public const string GreyscaleTexturesPath = $"{TexturesPath}/GreyscaleTextures";
+    public const string GrayscalePath = $"{TexturesPath}/Grayscale";
 
-    public const string InvisiblePixelPath = $"{GreyscaleTexturesPath}/InvisiblePixel";
+    public const string InvisiblePixelPath = $"{GrayscalePath}/InvisiblePixel";
 
-    public const string PixelPath = $"{GreyscaleTexturesPath}/Pixel";
+    public const string PixelPath = $"{GrayscalePath}/Pixel";
 
     public const string NoiseTexturesPath = $"{TexturesPath}/Noise";
 
-    #endregion Texture Path Constants
+    #endregion
 
-    #region Greyscale Textures
+    #region Grayscale Textures
 
-    public static readonly LazyAsset<Texture2D> BloomCircleSmall = LoadDeferred($"{GreyscaleTexturesPath}/BloomCircleSmall");
+    public static readonly LazyAsset<Texture2D> BloomCircleSmall = LoadDeferred($"{GrayscalePath}/BloomCircleSmall");
 
-    public static readonly LazyAsset<Texture2D> BloomFlare = LoadDeferred($"{GreyscaleTexturesPath}/BloomFlare");
+    public static readonly LazyAsset<Texture2D> BloomFlare = LoadDeferred($"{GrayscalePath}/BloomFlare");
 
-    public static readonly LazyAsset<Texture2D> BloomLineTexture = LoadDeferred($"{GreyscaleTexturesPath}/BloomLine");
+    public static readonly LazyAsset<Texture2D> BloomLineTexture = LoadDeferred($"{GrayscalePath}/BloomLine");
 
-    public static readonly LazyAsset<Texture2D> ChromaticBurst = LoadDeferred($"{GreyscaleTexturesPath}/ChromaticBurst");
+    public static readonly LazyAsset<Texture2D> ChromaticBurst = LoadDeferred($"{GrayscalePath}/ChromaticBurst");
 
-    public static readonly LazyAsset<Texture2D> ShineFlare = LoadDeferred($"{GreyscaleTexturesPath}/ShineFlare");
+    public static readonly LazyAsset<Texture2D> ShineFlare = LoadDeferred($"{GrayscalePath}/ShineFlare");
 
-    #endregion Greyscale Textures
+    #endregion
 
     #region Noise Textures
 
@@ -56,7 +56,7 @@ public class AssetDirectories : ModSystem
     // Self-explanatory.
     public static readonly LazyAsset<Texture2D> Pixel = LoadDeferred(PixelPath);
 
-    #endregion Pixels
+    #endregion
 
     #region Loader Utility
 
@@ -69,5 +69,5 @@ public class AssetDirectories : ModSystem
         return LazyAsset<Texture2D>.Request(path, AssetRequestMode.ImmediateLoad);
     }
 
-    #endregion Loader Utility
+    #endregion
 }

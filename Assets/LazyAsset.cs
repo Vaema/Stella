@@ -28,5 +28,5 @@ public readonly struct LazyAsset<AssetType>(Func<Asset<AssetType>> assetInitiali
     /// <param name="path">The path to the asset.</param>
     /// <param name="requestMode">The request mode by which the asset should be loaded. Defaults to <see cref="AssetRequestMode.AsyncLoad"/>.</param>
     public static LazyAsset<AssetType> Request(string path, AssetRequestMode requestMode = AssetRequestMode.AsyncLoad) =>
-        new LazyAsset<AssetType>(() => ModContent.Request<AssetType>(path, requestMode));
+        new(() => ModContent.Request<AssetType>(path, requestMode));
 }

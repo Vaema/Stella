@@ -1,9 +1,8 @@
-﻿# TODO
+﻿# To-Do List
 
-Unfinished implementations:
-- Held item and projectile support (configurable).
-- Alternative biome, ore, and world selection difficulty system.
+### Features:
+- Inverse kinematics.
+- An XML file for documentation. I was just too lazy to do it right now.
 
-Other ideas to consider:
-- Potential dimension system without the need for Subworld Library?
-- Daybreak library support?
+### Fixes:
+- Remove the obsolete ArmorShaderData calls in ManagedShader.cs under CreateDyeBindings() when 1.4.5 tModLoader releases.

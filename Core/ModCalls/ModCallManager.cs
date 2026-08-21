@@ -12,7 +12,7 @@ public class ModCallManager
     public static readonly Dictionary<string, List<ModCall>> ModCallsByMods = [];
 
     /// <summary>
-    ///     Call this from YourMod.Call(params object[] args).
+    /// Call this from YourMod.Call(params object[] args).
     /// </summary>
     public static object ProcessAllModCalls(Mod mod, params object[] args)
     {

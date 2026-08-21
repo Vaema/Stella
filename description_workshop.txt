@@ -1,4 +1,13 @@
 [h1]Stella[/h1]
 
-A general-purpose library for Terraria mods to use.
-For more information, check the [url=https://github.com/Vaema/Stella] GitHub repository [/url].
+[h2]Information[/h2]
+Stella is a general-purpose library for Terraria mods to use. It is also a continuation of the Luminance library made by Lucille Karma.
+Why? Luminance is planned to be deprecated, and it was pretty laggy to begin with.
+For more information, check the [url=https://github.com/Vaema/Stella]GitHub repository[/url].
+
+[h2]Credits[/h2]
+Here is a special thanks to each of the following:
+[list]
+[*] Lucille Karma and the Luminance contributors, for creating Luminance.
+[*] Tomat, for originally informing me that Luminance is being deprecated.
+[/list]

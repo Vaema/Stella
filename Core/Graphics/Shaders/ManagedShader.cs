@@ -83,7 +83,7 @@ public sealed class ManagedShader : IDisposable
     {
         // TODO -- Update this in 1.4.5.
         // Updating this is probably going to sting a bit, since creating an Asset wrapper around an Effect at recompilation time is more messy than simply constructing a Ref wrapper.
-        ArmorShaderData armorShaderData = new ArmorShaderData(Shader, DefaultPassName);
+        ArmorShaderData armorShaderData = new(Shader, DefaultPassName);
 
         if (DyeShaderMappings.ShaderToDyeID.TryGetValue(Name, out int existingDyeID))
         {
