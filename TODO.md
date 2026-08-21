@@ -2,6 +2,7 @@
 
 ### Features:
 - Inverse kinematics.
+- Multi-hitbox support, primarily for worm NPCs.
 - An XML file for documentation. I was just too lazy to do it right now.
 
 ### Fixes:

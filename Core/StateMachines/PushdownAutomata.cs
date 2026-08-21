@@ -7,13 +7,13 @@ namespace Stella.Core.StateMachines;
 public class PushdownAutomata<TStateWrapper, TStateIdentifier> where TStateWrapper : class, IState<TStateIdentifier> where TStateIdentifier : struct
 {
     /// <summary>
-    ///     Represents a framework for hijacking a transition's final state selection.
-    ///     This is useful for allowing states to transition to something customized when its default transition condition has been triggered, without having to duplicate conditions many times.
+    /// Represents a framework for hijacking a transition's final state selection.
+    /// This is useful for allowing states to transition to something customized when its default transition condition has been triggered, without having to duplicate conditions many times.
     /// </summary>
     public record TransitionHijack(Func<TStateIdentifier?, TStateIdentifier?> SelectionHijackFunction, Action<TStateIdentifier?> HijackAction);
 
     /// <summary>
-    ///     Represents a framework for a state transition's information.
+    /// Represents a framework for a state transition's information.
     /// </summary>
     public record TransitionInfo(TStateIdentifier? NewState, bool RememberPreviousState, Func<bool> TransitionCondition, Action TransitionCallback = null);
 
@@ -29,44 +29,44 @@ public class PushdownAutomata<TStateWrapper, TStateIdentifier> where TStateWrapp
     }
 
     /// <summary>
-    ///     A collection of custom states that should be performed when a state is ongoing.
+    /// A collection of custom states that should be performed when a state is ongoing.
     /// </summary>
     public readonly Dictionary<TStateIdentifier, Action> StateBehaviors = [];
 
     /// <summary>
-    ///     A list of hijack actions to perform during a state transition.
+    /// A list of hijack actions to perform during a state transition.
     /// </summary>
     public List<TransitionHijack> HijackActions = [];
 
     /// <summary>
-    ///     A generalized registry of states with individualized data.
+    /// A generalized registry of states with individualized data.
     /// </summary>
     public Dictionary<TStateIdentifier, TStateWrapper> StateRegistry = [];
 
     /// <summary>
-    ///     The state stack for the automaton.
+    /// The state stack for the automaton.
     /// </summary>
     public Stack<TStateWrapper> StateStack = new();
 
     protected Dictionary<TStateIdentifier, List<TransitionInfo>> transitionTable = [];
 
     /// <summary>
-    ///     The current state of the automaton.
+    /// The current state of the automaton.
     /// </summary>
     public TStateWrapper CurrentState => StateStack.TryPeek(out var state) ? state : null;
 
     /// <summary>
-    ///     The set of actions that should occur when a state is popped.
+    /// The set of actions that should occur when a state is popped.
     /// </summary>
     public event Action<TStateWrapper> OnStatePop;
 
     /// <summary>
-    ///     The set of actions that should occur when a state transition occurs.
+    /// The set of actions that should occur when a state transition occurs.
     /// </summary>
     public event OnStateTransitionDelegate OnStateTransition;
 
     /// <summary>
-    ///     The set of actions that should occur when the stack is out of items.
+    /// The set of actions that should occur when the stack is out of items.
     /// </summary>
     public event Action OnStackEmpty;
 
@@ -83,7 +83,7 @@ public class PushdownAutomata<TStateWrapper, TStateIdentifier> where TStateWrapp
 
     public void PerformStateTransitionCheck()
     {
-        if (!StateStack.Any())
+        if (StateStack.Count == 0)
         {
             OnStackEmpty?.Invoke();
             return;
@@ -93,9 +93,9 @@ public class PushdownAutomata<TStateWrapper, TStateIdentifier> where TStateWrapp
             return;
 
         List<TransitionInfo> potentialStates = value ?? [];
-        List<TransitionInfo> transitionableStates = potentialStates.Where(s => s.TransitionCondition()).ToList();
+        List<TransitionInfo> transitionableStates = [.. potentialStates.Where(s => s.TransitionCondition())];
 
-        if (!transitionableStates.Any())
+        if (transitionableStates.Count == 0)
             return;
 
         TransitionInfo transition = transitionableStates.First();
