@@ -10,4 +10,5 @@ Here is a special thanks to each of the following:
 [list]
 [*] Lucille Karma and the Luminance contributors, for creating Luminance.
 [*] Tomat, for originally informing me that Luminance is being deprecated.
+[*] V. Bladez, for creating the mod icon.
 [/list]
