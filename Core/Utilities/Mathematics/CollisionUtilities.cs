@@ -6,7 +6,7 @@ namespace Stella.Core.Utilities;
 public static partial class Utilities
 {
     /// <summary>
-    ///     Shifts a point until it reaches level ground.
+    /// Shifts a point until it reaches level ground.
     /// </summary>
     /// <param name="p">The original point.</param>
     public static Point FindGroundVertical(Point p)
@@ -28,7 +28,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Shifts a point until it reaches level ground.
+    /// Shifts a point until it reaches level ground.
     /// </summary>
     /// <param name="p">The original point.</param>
     /// <param name="direction">The direction to search in.</param>
@@ -59,7 +59,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Determines if a typical hitbox rectangle is intersecting a circular hitbox.
+    /// Determines if a typical hitbox rectangle is intersecting a circular hitbox.
     /// </summary>
     /// <param name="centerCheckPosition">The center of the circular hitbox.</param>
     /// <param name="radius">The radius of the circular hitbox.</param>
@@ -83,7 +83,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Performs collision based a rotating hitbox for an entity by treating the hitbox as a line. By default uses the velocity of the entity as a direction. This can be overridden.
+    /// Performs collision based a rotating hitbox for an entity by treating the hitbox as a line. By default uses the velocity of the entity as a direction. This can be overridden.
     /// </summary>
     /// <param name="entity">The entity.</param>
     /// <param name="targetTopLeft">The top left coordinates of the target to check.</param>

@@ -104,10 +104,10 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     A smooth polynomial curve (4x^3 - 6x^2 + 3x, to be exact) that takes in a 0-1 interpolant and biases it smoothly towards 0.5.
+    /// A smooth polynomial curve (4x^3 - 6x^2 + 3x, to be exact) that takes in a 0-1 interpolant and biases it smoothly towards 0.5.
     /// </summary>
     /// <remarks>
-    ///     The resulting polynomial of 4x^3 - 6x^2 + 3x was arrived at via a lerp(x^3, 1 - (1 - x)^3, x) operation and simplifying results.
+    /// The resulting polynomial of 4x^3 - 6x^2 + 3x was arrived at via a lerp(x^3, 1 - (1 - x)^3, x) operation and simplifying results.
     /// </remarks>
     /// <param name="interpolant">The input interpolant.</param>
     public static float SmoothBump(float interpolant)
@@ -115,6 +115,16 @@ public static partial class Utilities
         float a = interpolant * interpolant * 4f;
         float b = interpolant * -6f;
         return (a + b + 3f) * interpolant;
+    }
+
+    /// <summary>
+    /// Calculates a smooth step of a variant with degree 11. Considerably more expensive than a traditional smooth step, but also far smoother.
+    /// </summary>
+    /// <param name="x">The input to the smooth step. Clamped between 0 and 1.</param>
+    public static float UltraSmoothStep(float x)
+    {
+        x = Clamp(x, 0f, 1f);
+        return SmoothStep(0f, 1f, SmoothStep(0f, 1f, x));
     }
 
     /// <summary>

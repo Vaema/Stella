@@ -8,7 +8,7 @@ namespace Stella.Core.Utilities;
 public static partial class Utilities
 {
     /// <summary>
-    ///     Stops a vanilla rain event if one is already happening.
+    /// Stops a vanilla rain event if one is already happening.
     /// </summary>
     public static void StopRain(bool clearWeather = false, bool worldSync = true)
     {
@@ -25,7 +25,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Stops a vanilla sandstorm if one is already happening.
+    /// Stops a vanilla sandstorm event if one is already happening.
     /// </summary>
     public static void StopSandstorm()
     {
@@ -34,7 +34,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Changes the in-game time.
+    /// Changes the in-game time.
     /// </summary>
     /// <param name="changeToDay">Sets it to day in-game if true.</param>
     public static void ChangeTime(bool changeToDay)

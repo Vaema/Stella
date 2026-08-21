@@ -10,13 +10,13 @@ namespace Stella.Core.Utilities;
 public static partial class Utilities
 {
     /// <summary>
-    ///     Binding flags that account for all access and local membership statuses.
+    /// Binding flags that account for all access and local membership statuses.
     /// </summary>
     public static readonly BindingFlags UniversalBindingFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public;
-    
+
     /// <summary>
-    ///     Loads all instances of a given mod type (such as <see cref="ModNPC"/>) that have a specific interface attribute.<br></br>
-    ///     This method is useful for handling autoloading on multi-attributed pieces of content.
+    /// Loads all instances of a given mod type (such as <see cref="ModNPC"/>) that have a specific interface attribute.<br></br>
+    /// This method is useful for handling autoloading on multi-attributed pieces of content.
     /// </summary>
     /// <param name="mod">The mod to search in.</param>
     /// <param name="queryCondition">A secondary query condition to apply when collecting interfaces. By default this doesn't affect output results.</param>
@@ -31,7 +31,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Retrieves all types which derive from a specific type in a given assembly.
+    /// Retrieves all types which derive from a specific type in a given assembly.
     /// </summary>
     /// <param name="baseType">The base type.</param>
     /// <param name="assemblyToSearch">The assembly to search.</param>

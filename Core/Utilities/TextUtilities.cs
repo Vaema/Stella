@@ -1,22 +1,22 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Text;
+using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.Chat;
 using Terraria.ID;
 using Terraria.Localization;
-using Terraria;
-using System.Text;
 
 namespace Stella.Core.Utilities;
 
 public static partial class Utilities
 {
     /// <summary>
-    ///     Returns the namespace path to the provided object, including the object itself.
+    /// Returns the namespace path to the provided object, including the object itself.
     /// </summary>
     public static string GetPath(this object obj) => obj.GetType().Namespace.Replace('.', '/') + "/" + obj.GetType().Name;
 
     /// <summary>
-    ///     Returns the provided number with the correct ordinal suffix.<br/>
-    ///     For example, 3 would return third.
+    /// Returns the provided number with the correct ordinal suffix.<br/>
+    /// For example, 3 would return third.
     /// </summary>
     public static string AddOrdinalSuffix(int positiveNumber)
     {
@@ -37,7 +37,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Displays arbitrary text in the game chat with a desired color. This method expects to be called server-side in multiplayer, with the message display packet being sent to all clients from there.
+    /// Displays arbitrary text in the game chat with a desired color. This method expects to be called server-side in multiplayer, with the message display packet being sent to all clients from there.
     /// </summary>
     /// <param name="text">The text to display.</param>
     /// <param name="color">The color of the text.</param>
@@ -50,7 +50,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Displays the localized text gotten from the provided key in the chat, accounting for multiplayer.
+    /// Displays the localized text gotten from the provided key in the chat, accounting for multiplayer.
     /// </summary>
     public static void BroadcastLocalizedText(string key, Color? textColor = null)
     {
@@ -61,7 +61,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Colors a message with the provided color using chat tags.
+    /// Colors a message with the provided color using chat tags.
     /// </summary>
     public static string ColorMessage(string message, Color color)
     {

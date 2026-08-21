@@ -6,7 +6,7 @@ namespace Stella.Core.Utilities;
 public static partial class Utilities
 {
     /// <summary>
-    ///     Calculates the elbow position of a two-limbed IK system via trigonometry.
+    /// Calculates the elbow position of a two-limbed IK system via trigonometry.
     /// </summary>
     /// <param name="start">The start of the IK system.</param>
     /// <param name="end">The end effector position of the IK system.</param>
@@ -21,7 +21,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Clamps the length of a vector.
+    /// Clamps the length of a vector.
     /// </summary>
     /// <param name="v">The vector to clamp the length of.</param>
     /// <param name="min">The minimum vector length.</param>
@@ -32,7 +32,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Interpolates between three <see cref="Vector2"/>-based points via a quadratic Bezier spline.
+    /// Interpolates between three <see cref="Vector2"/>-based points via a quadratic Bezier spline.
     /// </summary>
     /// <param name="a">The first point.</param>
     /// <param name="b">The second point.</param>
@@ -48,7 +48,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Calculates the signed distance of a point from a given line. This is relative to how far it is perpendicular to said line.
+    /// Calculates the signed distance of a point from a given line. This is relative to how far it is perpendicular to said line.
     /// </summary>
     /// <param name="evaluationPoint">The point to check.</param>
     /// <param name="linePoint">The pivot point upon which the line rotates.</param>
@@ -58,11 +58,16 @@ public static partial class Utilities
         return Vector2.Dot(lineDirection, evaluationPoint - linePoint);
     }
 
+    /// <summary>
+    /// Calculates the direction to a given position from a vector with safely performed underlying normalization.
+    /// </summary>
+    /// <param name="target">The vector to perform the calculations relative to.</param>
+    /// <param name="destination">The position to get the direction towards.</param>
     public static Vector2 SafeDirectionTo(this Vector2 target, Vector2 destination) =>
         (destination - target).SafeNormalize(Vector2.Zero);
 
     /// <summary>
-    ///     Rotates a vector's direction towards an ideal angle at a specific incremental rate.
+    /// Rotates a vector's direction towards an ideal angle at a specific incremental rate.
     /// </summary>
     /// <param name="originalVector">The original vector to rotated from.</param>
     /// <param name="idealAngle">The ideal direction to approach.</param>

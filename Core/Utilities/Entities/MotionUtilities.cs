@@ -6,7 +6,7 @@ namespace Stella.Core.Utilities;
 public static partial class Utilities
 {
     /// <summary>
-    ///     Calculates the direction to a given position from an entity with safely performed underlying normalization.
+    /// Calculates the direction to a given position from an entity with safely performed underlying normalization.
     /// </summary>
     /// <param name="entity">The entity to perform the calculations relative to.</param>
     /// <param name="destination">The position to get the direction towards.</param>
@@ -14,7 +14,7 @@ public static partial class Utilities
         (destination - entity.Center).SafeNormalize(Vector2.Zero);
 
     /// <summary>
-    ///     Calculates the X direction to a given position from an entity.
+    /// Calculates the X direction to a given position from an entity.
     /// </summary>
     /// <param name="entity">The entity to perform the calculations relative to.</param>
     /// <param name="destination">The position to get the direction towards.</param>
