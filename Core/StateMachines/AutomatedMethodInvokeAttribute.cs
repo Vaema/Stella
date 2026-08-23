@@ -15,10 +15,9 @@ public sealed class AutomatedMethodInvokeAttribute : Attribute
     /// <param name="instance">The object instance to check methods for.</param>
     public static void InvokeWithAttribute(object instance)
     {
-        MethodInfo[] methods = instance.GetType().GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static).
+        MethodInfo[] methods = [.. instance.GetType().GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static).
             // Ignore methods without this attribute or any variable parameters to account for.
-            Where(m => m.GetCustomAttributes<AutomatedMethodInvokeAttribute>().Any() && !m.GetParameters().Any()).
-            ToArray();
+            Where(m => m.GetCustomAttributes<AutomatedMethodInvokeAttribute>().Any() && m.GetParameters().Length == 0)];
 
         for (int i = 0; i < methods.Length; i++)
         {
