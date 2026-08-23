@@ -10,8 +10,8 @@ public class LoopedSoundInstance
     protected readonly SoundStyle loopSoundStyle;
 
     /// <summary>
-    ///     An automatic termination condition that governs whether the looping sound should terminate or not. Meant to serve as a fail-safe to ensure that looped sounds do not go on long after they should have stopped.
-    ///     Useful for cases such as sounds that are attached to an entity but should go away.
+    /// An automatic termination condition that governs whether the looping sound should terminate or not. Meant to serve as a fail-safe to ensure that looped sounds do not go on long after they should have stopped.
+    /// Useful for cases such as sounds that are attached to an entity but should go away.
     /// </summary>
     public Func<bool> AutomaticTerminationCondition
     {
@@ -20,7 +20,7 @@ public class LoopedSoundInstance
     }
 
     /// <summary>
-    ///     The sound slot that manages this looping sound.
+    /// The sound slot that manages this looping sound.
     /// </summary>
     public SlotId LoopingSoundSlot
     {
@@ -29,7 +29,7 @@ public class LoopedSoundInstance
     }
 
     /// <summary>
-    ///     Whether the loop sound has been started yet or not.
+    /// Whether the loop sound has been started yet or not.
     /// </summary>
     public bool HasLoopSoundBeenStarted
     {
@@ -38,7 +38,7 @@ public class LoopedSoundInstance
     }
 
     /// <summary>
-    ///     Whether this sound has been stopped or not.
+    /// Whether this sound has been stopped or not.
     /// </summary>
     public bool HasBeenStopped
     {
@@ -47,7 +47,7 @@ public class LoopedSoundInstance
     }
 
     /// <summary>
-    ///     Whether the loop sound is being played.
+    /// Whether the loop sound is being played.
     /// </summary>
     public bool LoopIsBeingPlayed => SoundEngine.TryGetActiveSound(LoopingSoundSlot, out _);
 
@@ -61,7 +61,7 @@ public class LoopedSoundInstance
     }
 
     /// <summary>
-    ///     Updates all active sounds.
+    /// Updates all active sounds.
     /// </summary>
     /// <param name="soundPosition">The moving source position of the sounds.</param>
     /// <param name="updateLoop">An optional update behavior that should be applied to the sounds.</param>
@@ -77,7 +77,7 @@ public class LoopedSoundInstance
     }
 
     /// <summary>
-    ///     Starts all sounds.
+    /// Starts all sounds.
     /// </summary>
     /// <param name="soundPosition">The source position of the sounds.</param>
     protected virtual void StartSounds(Vector2 soundPosition)
@@ -91,7 +91,7 @@ public class LoopedSoundInstance
     }
 
     /// <summary>
-    ///     Handles stop behaviors for sounds, sans the state changes.
+    /// Handles stop behaviors for sounds, sans the state changes.
     /// </summary>
     protected virtual void StopSoundsInternal()
     {
@@ -100,7 +100,7 @@ public class LoopedSoundInstance
     }
 
     /// <summary>
-    ///     Performs all necessary update behaviors for sounds, evaluating whether they need to be started, updating sound positions in the world, and performing arbitrary update behaviors via <paramref name="soundUpdateStep"/>.
+    /// Performs all necessary update behaviors for sounds, evaluating whether they need to be started, updating sound positions in the world, and performing arbitrary update behaviors via <paramref name="soundUpdateStep"/>.
     /// </summary>
     /// <param name="soundPosition">The source position of the sounds.</param>
     /// <param name="soundUpdateStep">An optional update behavior that should be applied to the sounds.</param>
@@ -116,7 +116,7 @@ public class LoopedSoundInstance
     }
 
     /// <summary>
-    ///     Marks sounds as being eligible for restarting.
+    /// Marks sounds as being eligible for restarting.
     /// </summary>
     public void Restart()
     {
@@ -125,7 +125,7 @@ public class LoopedSoundInstance
     }
 
     /// <summary>
-    ///     Stops all sounds.
+    /// Stops all sounds.
     /// </summary>
     public void Stop()
     {

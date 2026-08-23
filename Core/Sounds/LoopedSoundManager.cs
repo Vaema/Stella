@@ -8,7 +8,7 @@ namespace Stella.Core.Sounds;
 public class LoopedSoundManager : ModSystem
 {
     /// <summary>
-    ///     The set of all looping sounds handled by the manager.
+    /// The set of all looping sounds handled by the manager.
     /// </summary>
     private static readonly List<LoopedSoundInstance> loopedSounds = [];
 
@@ -49,7 +49,7 @@ public class LoopedSoundManager : ModSystem
     }
 
     /// <summary>
-    ///     Creates a new looping sound, with an optional, perpetually evaluated termination condition.
+    /// Creates a new looping sound, with an optional, perpetually evaluated termination condition.
     /// </summary>
     /// <param name="loopingSound">The sound that should be looped.</param>
     /// <param name="automaticTerminationCondition">An optional condition that dictates whether the sound should terminate automatically.</param>
