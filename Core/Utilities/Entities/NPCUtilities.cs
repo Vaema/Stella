@@ -7,7 +7,7 @@ namespace Stella.Core.Utilities;
 public static partial class Utilities
 {
     /// <summary>
-    ///     Defines a given <see cref="NPC"/>'s HP based on the current difficulty mode.
+    /// Defines a given <see cref="NPC"/>'s HP based on the current difficulty mode.
     /// </summary>
     /// <param name="npc">The NPC to set the HP for.</param>
     /// <param name="normalModeHP">HP value for Normal Mode.</param>
@@ -23,7 +23,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Excludes a given <see cref="NPC"/> from the bestiary completely.
+    /// Excludes a given <see cref="NPC"/> from the bestiary completely.
     /// </summary>
     /// <param name="npc">The NPC to apply the bestiary deletion to.</param>
     public static void ExcludeFromBestiary(this ModNPC npc)
@@ -36,10 +36,10 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     A simple utility that gracefully gets a <see cref="NPC"/>'s <see cref="NPC.ModNPC"/> instance as a specific type without having to do clunky casting.
+    /// A simple utility that gracefully gets a <see cref="NPC"/>'s <see cref="NPC.ModNPC"/> instance as a specific type without having to do clunky casting.
     /// </summary>
     /// <remarks>
-    ///     In the case of casting errors, this will create a log message that informs the user of the failed cast and fall back on a dummy instance.
+    /// In the case of casting errors, this will create a log message that informs the user of the failed cast and fall back on a dummy instance.
     /// </remarks>
     /// <typeparam name="TNPC">The ModNPC type to convert to.</typeparam>
     /// <param name="n">The NPC to access the ModNPC from.</param>
@@ -63,7 +63,7 @@ public static partial class Utilities
     internal static void UpdateBossCache() => BossIsActiveThisFrame = null;
 
     /// <summary>
-    ///     Checks if any bosses are present this frame.
+    /// Checks if any bosses are present this frame.
     /// </summary>
     public static bool AnyBosses()
     {
@@ -79,15 +79,14 @@ public static partial class Utilities
                 return BossIsActiveThisFrame.Value;
             }
         }
-        
+
         BossIsActiveThisFrame = false;
         return BossIsActiveThisFrame.Value;
     }
 
     /// <summary>
-    ///     Checks if an NPC is alive.
+    /// Checks if an NPC is alive.
     /// </summary>
     /// <param name="npc">The NPC.</param>
-    /// <returns></returns>
     public static bool Alive(this NPC npc) => npc != null && npc.active && npc.timeLeft > 0;
 }

@@ -15,7 +15,7 @@ internal interface IManualParticleRenderer
 }
 
 /// <summary>
-///     Provides direct access to the associated particle's draw collection, allowing for more control about how they are rendered.
+/// Provides direct access to the associated particle's draw collection, allowing for more control about how they are rendered.
 /// </summary>
 /// <remarks>
 /// Particles using this will not be automatically rendered.
@@ -46,7 +46,7 @@ public abstract class ManualParticleRenderer<TParticleType> : ModType, IManualPa
     void IManualParticleRenderer.RenderParticles() => RenderParticles();
 
     /// <summary>
-    ///     Iterate over <see cref="Particles"/> here and perform rendering logic.<br/>
+    /// Iterate over <see cref="Particles"/> here and perform rendering logic.<br/>
     /// <b>Note that no spritebatch has been started.</b>
     /// </summary>
     public abstract void RenderParticles();

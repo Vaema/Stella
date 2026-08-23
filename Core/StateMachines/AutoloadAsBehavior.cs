@@ -6,7 +6,6 @@ namespace Stella.Core.StateMachines;
 /// <summary>
 /// Marks a method as associated with the provided <typeparamref name="TStateIdentifier"/> for the purpose of automated state machine behavior linking.
 /// </summary>
-
 /// <param name="assosiatedState">The state to register this method as behavior for.</param>
 [AttributeUsage(AttributeTargets.Method)]
 public class AutoloadAsBehavior<TStateWrapper, TStateIdentifier>(TStateIdentifier assosiatedState) : Attribute where TStateWrapper : class, IState<TStateIdentifier> where TStateIdentifier : struct

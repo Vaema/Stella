@@ -11,7 +11,7 @@ namespace Stella.Core.Utilities;
 public static partial class Utilities
 {
     /// <summary>
-    ///     Summons a projectile of a specific type while also adjusting damage for vanilla spaghetti regarding hostile projectiles.
+    /// Summons a projectile of a specific type while also adjusting damage for vanilla spaghetti regarding hostile projectiles.
     /// </summary>
     /// <param name="source">The source of the projectile.</param>
     /// <param name="spawnX">The X spawn position of the projectile.</param>
@@ -63,7 +63,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Returns all projectiles present of a specific type.
+    /// Returns all projectiles present of a specific type.
     /// </summary>
     /// <param name="desiredTypes">The projectile type to check for.</param>
     public static IEnumerable<Projectile> AllProjectilesByID(params int[] desiredTypes)
@@ -78,13 +78,13 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Determines if a <see cref="Projectile"/> is on its final extra update. Useful for things like timer increments, which may only want to be performed once every frame.
+    /// Determines if a <see cref="Projectile"/> is on its final extra update. Useful for things like timer increments, which may only want to be performed once every frame.
     /// </summary>
     /// <param name="p">The projectile to check.</param>
     public static bool IsFinalExtraUpdate(this Projectile p) => p.numUpdates == -1;
 
     /// <summary>
-    ///     Checks if a given projectile ID is present anywhere.
+    /// Checks if a given projectile ID is present anywhere.
     /// </summary>
     /// <param name="projectileID">The projectile ID to check for.</param>
     public static bool AnyProjectiles(int projectileID)
@@ -98,7 +98,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Counts the amount of projectiles of any given IDs.
+    /// Counts the amount of projectiles of any given IDs.
     /// </summary>
     /// <param name="desiredTypes">The projectile IDs to check for.</param>
     public static int CountProjectiles(params int[] desiredTypes)
@@ -118,7 +118,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Checks whether the projectile's hitbox intersects the screen, accounting for the <see cref="ProjectileID.Sets.DrawScreenCheckFluff"/> setting.
+    /// Checks whether the projectile's hitbox intersects the screen, accounting for the <see cref="ProjectileID.Sets.DrawScreenCheckFluff"/> setting.
     /// </summary>
     /// <param name="p">The projectile to check.</param>
     public static bool IsOffscreen(this Projectile p)
@@ -129,10 +129,10 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     A simple utility that gracefully gets a <see cref="Projectile"/>'s <see cref="Projectile.ModProjectile"/> instance as a specific type without having to do clunky casting.
+    /// A simple utility that gracefully gets a <see cref="Projectile"/>'s <see cref="Projectile.ModProjectile"/> instance as a specific type without having to do clunky casting.
     /// </summary>
     /// <remarks>
-    ///     In the case of casting errors, this will create a log message that informs the user of the failed cast and fall back on a dummy instance.
+    /// In the case of casting errors, this will create a log message that informs the user of the failed cast and fall back on a dummy instance.
     /// </remarks>
     /// <typeparam name="TProjectile">The ModProjectile type to convert to.</typeparam>
     /// <param name="p">The Projectile to access the ModProjectile from.</param>
@@ -152,7 +152,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Finds the projectile with the current identity that belongs to the provided owner.
+    /// Finds the projectile with the current identity that belongs to the provided owner.
     /// </summary>
     /// <returns>The projectile, null if one was not found.</returns>
     public static Projectile FindProjectileByIdentity(int identity, int ownerIndex)
@@ -171,9 +171,8 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Checks if a projectile is alive.
+    /// Checks if a projectile is alive.
     /// </summary>
     /// <param name="projectile">The projectile.</param>
-    /// <returns></returns>
     public static bool Alive(this Projectile projectile) => projectile != null && projectile.active && projectile.timeLeft > 0;
 }

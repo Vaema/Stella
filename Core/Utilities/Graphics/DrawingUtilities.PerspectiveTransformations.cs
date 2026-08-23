@@ -7,7 +7,7 @@ namespace Stella.Core.Utilities;
 public static partial class Utilities
 {
     /// <summary>
-    ///     Calculates matrices for usage by vertex shaders, notably in the context of primitive meshes.
+    /// Calculates matrices for usage by vertex shaders, notably in the context of primitive meshes.
     /// </summary>
     /// <param name="width">The width of the overall view.</param>
     /// <param name="height">The height of the overall view.</param>
@@ -42,7 +42,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Calculates a <see cref="Matrix"/> for the purpose of <see cref="SpriteBatch"/> resets in the context of background/sky drawing.
+    /// Calculates a <see cref="Matrix"/> for the purpose of <see cref="SpriteBatch"/> resets in the context of background/sky drawing.
     /// </summary>
     public static Matrix GetCustomSkyBackgroundMatrix()
     {
@@ -54,7 +54,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Converts world positions to 0-1 UV values relative to the screen. This is incredibly useful when supplying position data to screen shaders.
+    /// Converts world positions to 0-1 UV values relative to the screen. This is incredibly useful when supplying position data to screen shaders.
     /// </summary>
     /// <param name="worldPosition">The world position.</param>
     public static Vector2 WorldSpaceToScreenUV(Vector2 worldPosition)

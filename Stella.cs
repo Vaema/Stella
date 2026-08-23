@@ -11,7 +11,7 @@ using Terraria.ModLoader;
 namespace Stella;
 
 /// <summary>
-///     The central mod type for the Stella library.
+/// The central mod type for the Stella library.
 /// </summary>
 public class Stella : Mod
 {

@@ -5,12 +5,12 @@ using Terraria;
 namespace Stella.Core.Physics.Verlets;
 
 /// <summary>
-///     Contains various simulations for verlet chains.
+/// Contains various simulations for verlet chains.
 /// </summary>
 public static class VerletSimulations
 {
     /// <summary>
-    ///     Performs a verlet simulation, configure specific details with <paramref name="settings"/>.
+    /// Performs a verlet simulation, configure specific details with <paramref name="settings"/>.
     /// </summary>
     /// <param name="segments">The segments to run through the simulaion.</param>
     /// <param name="segmentDistance">The ideal distance between each segment.</param>
@@ -84,7 +84,7 @@ public static class VerletSimulations
     }
 
     /// <summary>
-    ///     Performs a verlet simulation for a rope with a fixed end(s), configure specific details with <paramref name="settings"/>.
+    /// Performs a verlet simulation for a rope with a fixed end(s), configure specific details with <paramref name="settings"/>.
     /// </summary>
     /// <param name="segments">The segments to run through the simulaion.</param>
     /// <param name="topPosition">The fixed postion of the start of the rope.</param>

@@ -7,51 +7,51 @@ namespace Stella.Core.Utilities;
 public static partial class Utilities
 {
     /// <summary>
-    ///     Determines the sign of a number. Does not return zero. If zero is supplied as an input, one is returned.
+    /// Determines the sign of a number. Does not return zero. If zero is supplied as an input, one is returned.
     /// </summary>
     /// <param name="x">The input number.</param>
     public static int NonZeroSign(this float x) => x >= 0f ? 1 : -1;
 
     /// <summary>
-    ///     Converts a -1 or 1 based direction to an equivalent <see cref="SpriteEffects"/> for convenience.
+    /// Converts a -1 or 1 based direction to an equivalent <see cref="SpriteEffects"/> for convenience.
     /// </summary>
     /// <param name="direction">The numerical direction.</param>
     public static SpriteEffects ToSpriteDirection(this int direction) => direction == 1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
 
     /// <summary>
-    ///     Commonly known as a sine bump. Converts 0 to 1 values to a 0 to 1 to 0 again bump.
+    /// Commonly known as a sine bump. Converts 0 to 1 values to a 0 to 1 to 0 again bump.
     /// </summary>
     /// <param name="x">The input number.</param>
     public static float Convert01To010(float x) => Sin(Pi * Saturate(x));
 
     /// <summary>
-    ///     Easy shorthand that converts seconds to whole number frames.
+    /// Easy shorthand that converts seconds to whole number frames.
     /// </summary>
     /// <param name="seconds">The amount of seconds.</param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int SecondsToFrames(float seconds) => (int)Round(seconds * 60f);
 
     /// <summary>
-    ///     Easy shorthand that converts minutes to whole number frames.
+    /// Easy shorthand that converts minutes to whole number frames.
     /// </summary>
     /// <param name="minutes">The amount of minutes.</param>
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int MinutesToFrames(float minutes) => (int)Round(minutes * 3600f);
 
     /// <summary>
-    ///     Easy shorthand for (sin(x) + 1) / 2, which has the useful property of having a range of 0 to 1 rather than -1 to 1.
+    /// Easy shorthand for (sin(x) + 1) / 2, which has the useful property of having a range of 0 to 1 rather than -1 to 1.
     /// </summary>
     /// <param name="x">The input number.</param>
     public static float Sin01(float x) => Sin(x) * 0.5f + 0.5f;
 
     /// <summary>
-    ///     Easy shorthand for (cos(x) + 1) / 2, which has the useful property of having a range of 0 to 1 rather than -1 to 1.
+    /// Easy shorthand for (cos(x) + 1) / 2, which has the useful property of having a range of 0 to 1 rather than -1 to 1.
     /// </summary>
     /// <param name="x">The input number.</param>
     public static float Cos01(float x) => Cos(x) * 0.5f + 0.5f;
 
     /// <summary>
-    ///     Clamps a given number between 0 and 1.
+    /// Clamps a given number between 0 and 1.
     /// </summary>
     /// <param name="x">The number to clamp.</param>
     public static float Saturate(float x)
@@ -64,7 +64,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     A shorthand for <see cref="Utils.GetLerpValue(float, float, float, bool)"/> with <paramref name="clamped"/> defaulting to true.
+    /// A shorthand for <see cref="Utils.GetLerpValue(float, float, float, bool)"/> with <paramref name="clamped"/> defaulting to true.
     /// </summary>
     /// <param name="from">The value to interpolate from.</param>
     /// <param name="to">The value to interpolate to.</param>
@@ -80,7 +80,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Performs a linear bump across a spectrum of two in/out values.
+    /// Performs a linear bump across a spectrum of two in/out values.
     /// </summary>
     /// <param name="start1">The value at which the output should rise from 0 to 1.</param>
     /// <param name="start2">The value at which the output start bumping at 1.</param>

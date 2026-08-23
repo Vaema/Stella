@@ -3,7 +3,7 @@
 namespace Stella.Core.Physics.Verlets;
 
 /// <summary>
-///     Represents a verlet segment, for use in verlet simulatons.
+/// Represents a verlet segment, for use in verlet simulatons.
 /// </summary>
 /// <param name="position">The position of this segment.</param>
 /// <param name="velocity">The velocity of this segment.</param>

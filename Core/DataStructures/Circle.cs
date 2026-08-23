@@ -23,7 +23,7 @@ public struct Circle
     public readonly Vector2 RandomPointOnCircleEdge()
     {
         Vector2 v = RandomPointUnitCircle();
-        // Normalize, so that the point is on the edge of the unit circle.
+        // Normalize so that the point is on the edge of the unit circle.
         v.Normalize();
 
         return Center + v * Radius;

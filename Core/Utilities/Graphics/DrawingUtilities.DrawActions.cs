@@ -12,8 +12,8 @@ public static partial class Utilities
     // TODO -- This method is heavily based on Calamity's, but it's a utility method. Does it need to be rewritten?
 
     /// <summary>
-    ///     Draws a projectile as a series of afterimages. The first of these afterimages is centered on the center of the projectile's hitbox.<br />
-    ///     This function is guaranteed to draw the projectile itself, even if it has no afterimages and/or the Afterimages config option is turned off.
+    /// Draws a projectile as a series of afterimages. The first of these afterimages is centered on the center of the projectile's hitbox.<br />
+    /// This function is guaranteed to draw the projectile itself, even if it has no afterimages and/or the Afterimages config option is turned off.
     /// </summary>
     /// <param name="proj">The projectile to be drawn.</param>
     /// <param name="mode">The type of afterimage drawing code to use. Vanilla Terraria has three options: 0, 1, and 2.</param>

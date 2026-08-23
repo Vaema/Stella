@@ -54,7 +54,7 @@ public abstract class NPCBehaviorOverride : ModType<NPC, NPCBehaviorOverride>
     /// <summary>
     /// Modifies the type name of the NPC.
     /// </summary>
-    /// <param name="typeName">The NPC's <see cref="NPC.TypeName"/.></param>
+    /// <param name="typeName">The NPC's <see cref="NPC.TypeName"/>.</param>
     public virtual void ModifyTypeName(ref string typeName) { }
 
     /// <summary>

@@ -23,7 +23,7 @@ public readonly struct VertexPosition2DColorTexture(Vector2 position, Color colo
     /// The texture-coordinate of the vertex.
     /// </summary>
     /// /// <remarks>
-    /// The Z component isn't actually related to 3D, it holds the width of the vertex at the given point, since arbitrary data cannot be saved on a per-vertex basis and needs to be contained within some pre-defined format.
+    /// The Z component isn't actually related to 3D. It holds the width of the vertex at the given point, since arbitrary data cannot be saved on a per-vertex basis and needs to be contained within some pre-defined format.
     /// </remarks>
     public readonly Vector3 TextureCoordinates = new(textureCoordinates, widthCorrectionFactor);
 

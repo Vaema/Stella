@@ -8,7 +8,7 @@ namespace Stella.Core.Utilities;
 public static partial class Utilities
 {
     /// <summary>
-    ///     Returns a color interpolation similar to <see cref="Color.Lerp(Color, Color, float)"/> that supports multiple colors.
+    /// Returns a color interpolation similar to <see cref="Color.Lerp(Color, Color, float)"/> that supports multiple colors.
     /// </summary>
     /// <param name="interpolant">The 0-1 incremental value used when interpolating.</param>
     /// <param name="colors">The various colors to interpolate across.</param>
@@ -24,7 +24,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Returns a color lerp that allows for smooth transitioning between two given colors.
+    /// Returns a color lerp that allows for smooth transitioning between two given colors.
     /// </summary>
     /// <param name="firstColor">The first color you want it to switch between.</param>
     /// <param name="secondColor">The second color you want it to switch between.</param>
@@ -36,7 +36,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Hue shifts a given color by a desired amount. The hue spectrum is within a 0-1 range.
+    /// Hue shifts a given color by a desired amount. The hue spectrum is within a 0-1 range.
     /// </summary>
     /// <param name="color">The original color.</param>
     /// <param name="hueOffset">The amount to offset the hue by.</param>
@@ -54,7 +54,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Flips an origin around a <see cref="Texture2D"/> in accordance with a <see cref="SpriteEffects"/> direction.
+    /// Flips an origin around a <see cref="Texture2D"/> in accordance with a <see cref="SpriteEffects"/> direction.
     /// </summary>
     /// <param name="texture">The texture to flip based on.</param>
     /// <param name="origin">The unmodified origin.</param>
@@ -70,7 +70,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Flips an origin around a <see cref="Rectangle"/> frame in accordance with a <see cref="SpriteEffects"/> direction.
+    /// Flips an origin around a <see cref="Rectangle"/> frame in accordance with a <see cref="SpriteEffects"/> direction.
     /// </summary>
     /// <param name="frame">The frame to flip based on.</param>
     /// <param name="origin">The unmodified origin.</param>
@@ -86,7 +86,7 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Generates an arbitrary quantity of evenly spaced laser point positions for a projectile. Commonly used when calculating points for primitive-based laser beams.
+    /// Generates an arbitrary quantity of evenly spaced laser point positions for a projectile. Commonly used when calculating points for primitive-based laser beams.
     /// </summary>
     /// <param name="projectile">The projectile to calculate positions from.</param>
     /// <param name="samplesCount">The amount of subdivisions that should be performed. Larger values are more precise, but also more computationally expensive to use.</param>

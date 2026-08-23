@@ -26,7 +26,7 @@ public static partial class Utilities
     // This is desirable for somewhat random wavy fluctuations.
     // In this case, pi and e used, which are indeed irrational numbers.
     /// <summary>
-    ///     Calculates an aperiodic sine. This function only achieves this if <paramref name="a"/> and <paramref name="b"/> are irrational numbers.
+    /// Calculates an aperiodic sine. This function only achieves this if <paramref name="a"/> and <paramref name="b"/> are irrational numbers.
     /// </summary>
     /// <param name="x">The input value.</param>
     /// <param name="dx">An optional, secondary value that works similarly to x. Unlike x, however, it serves as an input offset that is unaffected by the two coefficients.</param>
@@ -38,9 +38,9 @@ public static partial class Utilities
     }
 
     /// <summary>
-    ///     Applies 2D FBM, an iterative process commonly use with things like Perlin noise to give a natural, "crisp" aesthetic to noise, rather than a blobby one.
-    ///     <br></br>
-    ///     The greater the amount of octaves, the more pronounced this effect is, but the more performance intensive it is.
+    /// Applies 2D FBM, an iterative process commonly use with things like Perlin noise to give a natural, "crisp" aesthetic to noise, rather than a blobby one.
+    /// <br></br>
+    /// The greater the amount of octaves, the more pronounced this effect is, but the more performance intensive it is.
     /// </summary>
     /// <param name="x">The X position to sample from.</param>
     /// <param name="y">The Y position to sample from.</param>

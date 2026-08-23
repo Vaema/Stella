@@ -1,7 +1,7 @@
 ﻿namespace Stella.Core.Physics.Verlets;
 
 /// <summary>
-///     Configurable settings for verlet simulations.
+/// Configurable settings for verlet simulations.
 /// </summary>
 /// <param name="TileCollision">Whether the segments should collide with tiles.</param>
 /// <param name="SlowInWater">Whether the segments should move slower through water.<br/><b>Does nothing if <paramref name="Gravity"/> is 0.</b></param>
