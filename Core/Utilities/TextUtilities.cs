@@ -15,7 +15,8 @@ public static partial class Utilities
     public static string GetPath(this object obj) => obj.GetType().Namespace.Replace('.', '/') + "/" + obj.GetType().Name;
 
     /// <summary>
-    /// Returns the provided number with the correct ordinal suffix.<br/>
+    /// Returns the provided number with the correct ordinal suffix.
+    /// <br></br>
     /// For example, 3 would return third.
     /// </summary>
     public static string AddOrdinalSuffix(int positiveNumber)
